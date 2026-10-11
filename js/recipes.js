@@ -17,9 +17,24 @@ const CATEGORIES = [
   { id: 'snacks', label: 'Snacks', emoji: '🧀' },
   { id: 'desserts', label: 'Desserts', emoji: '🍫' },
   { id: 'wraps', label: 'Wraps', emoji: '🌯' },
+  { id: 'pyrex', label: 'Pyrex Dish', emoji: '🥘' },
   { id: 'breakfast', label: 'Breakfast', emoji: '🍳' },
   { id: 'frozen', label: 'From Frozen', emoji: '🧊' }
 ];
+
+// Shown above the results when a category chip is selected.
+const CATEGORY_TIPS = {
+  pyrex: {
+    title: '🥘 Cooking in a Pyrex dish',
+    tips: [
+      'Use oven-safe glass (Pyrex or borosilicate) – check it says oven-safe. No plastic lids.',
+      'Leave a 1–2cm gap around the dish so the air can flow, and make sure it doesn\'t touch the element.',
+      'Avoid sudden temperature changes: don\'t put a dish straight from the fridge or freezer into a hot air fryer, don\'t add cold liquid to a hot dish, and never put a hot dish on a wet or cold surface.',
+      'Glass heats more slowly than metal, so bakes take a few minutes longer. Most work best at 160–180°C.',
+      'Lift the hot dish out with oven gloves (a strip of foil underneath makes a handy sling). If covering with foil, tuck it in tightly so it can\'t blow into the element.'
+    ]
+  }
+};
 
 const RECIPES = [
   // ───────────── CHICKEN ─────────────

@@ -149,6 +149,10 @@ function renderSearch() {
   renderCatChips();
   const results = searchRecipes(state.query, state.cat);
   $('#searchClear').hidden = !state.query;
+  const tip = CATEGORY_TIPS[state.cat];
+  $('#catTip').innerHTML = tip
+    ? `<details class="cat-tip" open><summary>${esc(tip.title)}</summary><ul>${tip.tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>`
+    : '';
   $('#resultCount').textContent = `${results.length} recipe${results.length === 1 ? '' : 's'}`;
   $('#searchResults').innerHTML = results.length
     ? results.map(r => recipeCard(r)).join('')
