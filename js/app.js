@@ -116,9 +116,19 @@ function renderCatChips() {
 }
 
 function searchRecipes(query, cat) {
-  const q = Ingredients.clean(query);
-  const tokens = q.split(' ').filter(Boolean);
+  const q = Ingredients.clean(query).replace(/\band\b/g, '&');
+  const tokens = q.split(' ').filter(t => t && t !== '&');
   const whole = q ? Ingredients.resolve(q) : null;
+  // Best matches first: whole phrase in the name, then every word in the name, then the rest.
+  const rank = r => {
+    const n = r.name.toLowerCase().replace(/[^a-z0-9& ]+/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!q) return cat === 'trending' && !VIRAL_IDS.has(r.id) ? 1 : 0;
+    if (n === q) return 0;
+    if (n.startsWith(q)) return 1;
+    if (n.includes(q)) return 2;
+    if (tokens.every(t => n.includes(t))) return 3;
+    return 4;
+  };
   return RECIPES.filter(r => {
     if (cat === 'trending') { if (!r.tags.includes('trending')) return false; }
     else if (cat !== 'all' && r.cat !== cat) return false;
@@ -131,7 +141,7 @@ function searchRecipes(query, cat) {
       const syn = Ingredients.resolve(t);
       return !!syn && hay.includes(syn);
     });
-  });
+  }).map((r, i) => [rank(r), i, r]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
 }
 
 function renderSearch() {

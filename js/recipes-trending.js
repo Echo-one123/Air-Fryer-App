@@ -4,6 +4,8 @@
  * Trending & viral air fryer recipes – same format as recipes.js (see the notes at the top of that file).
  * Loaded after recipes.js and simply added to the RECIPES list.
  */
+// Remember which recipes are the newest viral ones, so the Trending tab can show them first.
+const VIRAL_START = RECIPES.length;
 RECIPES.push(
   // ───────────── CHICKEN ─────────────
   {
@@ -394,7 +396,7 @@ RECIPES.push(
     id: "dubai-pistachio-filo-cups", name: "Dubai-Style Pistachio Chocolate Filo Cups", emoji: "🍫", cat: "desserts",
     temp: 180, time: 6, prep: 15, serves: 6, turn: "none",
     tags: ["trending", "viral", "treat", "vegetarian"],
-    ing: [["3 sheets", "filo pastry", "shredded finely, like kataifi"], ["25g", "butter", "melted"], ["100g", "pistachios", "blitzed to a paste, or 4 tbsp pistachio cream"], ["2 tbsp", "cream", "or condensed milk"], ["1 tbsp", "icing sugar", "skip if using condensed milk"], ["150g", "dark chocolate", "or milk chocolate, melted"]],
+    ing: [["3 sheets", "filo pastry", "shredded finely, like kataifi"], ["25g", "butter", "melted"], ["100g", "pistachios", "blitzed to a paste, or 4 tbsp pistachio cream"], ["2 tbsp", "condensed milk"], ["150g", "dark chocolate", "or milk chocolate, melted"]],
     steps: [
       "Toss the shredded filo with the melted butter, spread on pierced baking paper and cook at 180°C for 5–6 minutes, stirring at halfway, until golden and crisp. Watch it closely.",
       "Mix the toasted filo with the pistachio paste, cream and icing sugar.",
@@ -415,3 +417,4 @@ RECIPES.push(
     ]
   }
 );
+const VIRAL_IDS = new Set(RECIPES.slice(VIRAL_START).map(r => r.id));

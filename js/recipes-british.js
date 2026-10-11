@@ -40,7 +40,7 @@ RECIPES.push(
     ] },
   { id: "crispy-duck-legs-orange", name: "Crispy Duck Legs with Orange", emoji: "🦆", cat: "chicken", temp: 180, time: 40, prep: 10, serves: 2, turn: "flip",
     tags: ["british", "date night", "gluten-free"],
-    ing: [["2", "duck legs"], ["1 tsp", "salt"], ["½ tsp", "five spice"], ["2 tbsp", "jam", "orange marmalade"], ["1", "lemon", "or 1 orange, zested and juiced"], ["1 tsp", "?thyme"]],
+    ing: [["2", "duck legs"], ["1 tsp", "salt"], ["½ tsp", "five spice"], ["2 tbsp", "marmalade"], ["1", "oranges", "zested and juiced"], ["1 tsp", "?thyme"]],
     steps: [
       "Prick the duck skin all over (not into the meat), pat dry and rub with salt, five spice and thyme.",
       "Cook skin-side down at 180°C for 20 minutes, then turn skin-side up for 15 minutes. Pour off the fat at halfway (save it for roast potatoes).",
@@ -58,7 +58,7 @@ RECIPES.push(
     ] },
   { id: "hot-dogs-crispy-onions", name: "Hot Dogs with Crispy Onions", emoji: "🌭", cat: "pork", temp: 190, time: 12, prep: 5, serves: 4, turn: "shake",
     tags: ["british", "family", "quick", "kids"],
-    ing: [["8", "hot dogs"], ["8", "bread", "hot dog rolls"], ["2", "onion", "thinly sliced"], ["1 tbsp", "oil"], ["2 tbsp", "?tomato ketchup"], ["2 tbsp", "?mustard"]],
+    ing: [["8", "hot dogs"], ["8", "hot dog rolls"], ["2", "onion", "thinly sliced"], ["1 tbsp", "oil"], ["2 tbsp", "?tomato ketchup"], ["2 tbsp", "?mustard"]],
     steps: [
       "Toss the onion slices in the oil with a pinch of salt and cook at 190°C for 8 minutes, shaking at halfway.",
       "Add the hot dogs to the basket and cook for 4 minutes more until the onions are golden and crispy and the hot dogs are piping hot.",
@@ -246,7 +246,7 @@ RECIPES.push(
     ] },
   { id: "honey-nut-granola", name: "Honey Nut Granola", emoji: "🥣", cat: "breakfast", temp: 150, time: 12, prep: 5, serves: 6, turn: "shake",
     tags: ["healthy", "batch cook", "vegetarian", "meal prep"],
-    ing: [["200g", "oats"], ["60g", "pistachios", "or mixed nuts, roughly chopped"], ["3 tbsp", "honey"], ["2 tbsp", "oil", "coconut or light olive oil"], ["1 tsp", "cinnamon"], ["30g", "?desiccated coconut"], ["50g", "?raisins"], ["pinch", "salt"]],
+    ing: [["200g", "oats"], ["60g", "mixed nuts", "roughly chopped"], ["3 tbsp", "honey"], ["2 tbsp", "oil", "coconut or light olive oil"], ["1 tsp", "cinnamon"], ["30g", "?desiccated coconut"], ["50g", "?raisins"], ["pinch", "salt"]],
     steps: [
       "Warm the honey and oil together, then mix with the oats, nuts, coconut, cinnamon and salt until evenly coated.",
       "Spread in a lined cake tin or tray that fits your basket.",
