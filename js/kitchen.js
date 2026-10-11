@@ -26,6 +26,9 @@ const PROTEINS = {
   'chicken wings': { label: 'Chicken Wings', noun: 'wings', qty: '700g', temp: 200, time: 22, turn: 'shake the wings', prep: 'Pat the wings really dry with kitchen paper – dry skin crisps best.', safe: [SAFE.chicken] },
   'chicken drumsticks': { label: 'Drumsticks', noun: 'drumsticks', qty: '6', temp: 200, time: 24, turn: 'turn the drumsticks', prep: 'Slash each drumstick 2–3 times down to the bone so it cooks through evenly.', safe: [SAFE.chicken] },
   'turkey mince': { label: 'Turkey Meatballs', noun: 'meatballs', qty: '400g', temp: 200, time: 12, turn: 'shake the meatballs', prep: 'Season the mince with salt and pepper and roll into 12 meatballs.', safe: [SAFE.mince] },
+  'turkey breast': { label: 'Turkey Steaks', noun: 'turkey', qty: '2 turkey breast steaks', temp: 190, time: 12, turn: 'turn the turkey', prep: 'Bash the turkey steaks to an even 1.5cm thickness.', safe: [SAFE.chicken] },
+  'pork fillet': { label: 'Pork Fillet', noun: 'pork', qty: '1 fillet (about 400g)', temp: 190, time: 18, turn: 'turn the pork', prep: 'Trim any silvery skin from the pork fillet and pat dry.', safe: [SAFE.pork], rest: 5 },
+  'mackerel': { label: 'Mackerel', noun: 'mackerel', qty: '4 fillets', temp: 200, time: 7, turn: null, prep: 'Pat the mackerel dry and slash the skin 2–3 times.', safe: [SAFE.fish] },
   'beef steak': { label: 'Steak', noun: 'steaks', qty: '2 steaks, about 2.5cm thick', temp: 200, time: 10, turn: 'turn the steaks', prep: 'Take the steaks out of the fridge 20 minutes before cooking and pat dry.', safe: [SAFE.steak], rest: 5, note: 'Timing is for medium-rare. Rare: take 2 minutes off. Well done: add 3–4 minutes.' },
   'beef mince': { label: 'Beef Meatballs', noun: 'meatballs', qty: '400g', temp: 200, time: 12, turn: 'shake the meatballs', prep: 'Season the mince with salt and pepper and roll into 12 meatballs (or shape 2 burgers – same time, turn halfway).', safe: [SAFE.mince] },
   'pork chops': { label: 'Pork Chops', noun: 'pork chops', qty: '2 chops, about 2cm thick', temp: 200, time: 13, turn: 'turn the chops', prep: 'Snip through the fat on the edge every 2cm so the chops stay flat.', safe: [SAFE.pork], rest: 3 },
@@ -153,7 +156,7 @@ const Kitchen = (() => {
     if (n.startsWith('beef')) return '🥩';
     if (n.startsWith('lamb')) return '🐑';
     if (n.includes('sausage')) return '🌭';
-    if (['pork chops', 'pork belly', 'pork mince', 'bacon', 'gammon steaks'].includes(n)) return '🥓';
+    if (['pork chops', 'pork belly', 'pork mince', 'pork fillet', 'bacon', 'gammon steaks'].includes(n)) return '🥓';
     if (Ingredients.type(n) === 'fish') return '🐟';
     return { halloumi: '🧀', tofu: '🥢', paneer: '🧀', chickpeas: '🫘' }[n] || '🍽️';
   }
