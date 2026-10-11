@@ -12,6 +12,7 @@ const CATALOGUE = {
     'chicken wings|wings, chicken wing',
     'chicken drumsticks|drumsticks, drumstick, chicken legs, chicken leg',
     'turkey mince|minced turkey, turkey',
+    'chicken mince|minced chicken, ground chicken',
     'turkey breast|turkey steaks, turkey breast steaks, turkey fillets',
     'whole chicken|roast chicken, roasting chicken, chicken whole',
     'beef steak|steak, steaks, sirloin, sirloin steak, ribeye, rib eye, ribeye steak, rump, rump steak, fillet steak, minute steak, frying steak, beef',
@@ -138,6 +139,7 @@ const CATALOGUE = {
     'sesame oil|toasted sesame oil',
     'rice vinegar|rice wine vinegar',
     'balsamic vinegar|balsamic',
+    'malt vinegar|vinegar, chip shop vinegar, white wine vinegar, cider vinegar',
     'hummus|houmous'
   ],
   spice: [
@@ -145,10 +147,12 @@ const CATALOGUE = {
     'ginger|fresh ginger, root ginger, ginger paste',
     'paprika|smoked paprika, sweet paprika',
     'garlic granules|garlic powder, garlic salt',
+    'onion granules|onion powder, onion salt',
     'mixed herbs|italian seasoning, dried herbs, herbes de provence, italian herbs',
     'oregano|dried oregano',
     'rosemary|fresh rosemary, dried rosemary',
     'thyme|fresh thyme, dried thyme',
+    'sage|fresh sage, dried sage',
     'parsley|fresh parsley, flat leaf parsley, flat-leaf parsley',
     'cumin|ground cumin, cumin seeds',
     'ground coriander|coriander, coriander powder',
