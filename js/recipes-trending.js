@@ -86,7 +86,7 @@ RECIPES.push(
   {
     id: "smash-burger-tacos", name: "Smash Burger Tacos", emoji: "🌮", cat: "beef",
     temp: 200, time: 10, prep: 10, serves: 2, turn: "flip",
-    tags: ["trending", "burger night", "viral"],
+    tags: ["wraps", "trending", "burger night", "viral"],
     ing: [["250g", "beef mince", "15–20% fat"], ["4", "tortilla wraps", "small/mini wraps"], ["4 slices", "cheddar"], ["½", "onion", "very finely diced"], ["½ tsp", "salt"], ["2", "gherkins", "sliced"], ["handful", "lettuce", "shredded"], ["2 tbsp", "mayonnaise"], ["1 tbsp", "tomato ketchup"], ["1 tsp", "mustard"]],
     steps: [
       "Divide the mince into 4 and press each into a very thin layer covering one side of a wrap, right to the edges. Season with salt and press a little onion in.",
@@ -286,7 +286,7 @@ RECIPES.push(
   {
     id: "folded-tortilla-wrap", name: "Folded Tortilla Wrap Hack", emoji: "🌯", cat: "snacks",
     temp: 200, time: 6, prep: 5, serves: 1, turn: "flip",
-    tags: ["trending", "viral", "lunch", "quick"],
+    tags: ["wraps", "trending", "viral", "lunch", "quick"],
     ing: [["1", "tortilla wraps", "large"], ["2 slices", "ham"], ["40g", "cheddar", "grated"], ["2 tbsp", "salsa"], ["handful", "spinach"], ["1 tbsp", "?cream cheese"]],
     steps: [
       "Cut from the centre of the wrap straight to the edge. Imagine it in quarters and add one filling to each: ham, cheese, salsa with cream cheese, spinach.",

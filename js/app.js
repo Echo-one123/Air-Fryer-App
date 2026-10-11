@@ -118,11 +118,11 @@ function renderCatChips() {
 function searchRecipes(query, cat) {
   const q = Ingredients.clean(query).replace(/\band\b/g, '&');
   const tokens = q.split(' ').filter(t => t && t !== '&');
-  const whole = q ? Ingredients.resolve(q) : null;
+  const whole = q ? Ingredients.resolveExact(q) : null;
   // Best matches first: whole phrase in the name, then every word in the name, then the rest.
   const rank = r => {
     const n = r.name.toLowerCase().replace(/[^a-z0-9& ]+/g, ' ').replace(/\s+/g, ' ').trim();
-    if (!q) return cat === 'trending' && !VIRAL_IDS.has(r.id) ? 1 : 0;
+    if (!q) return (cat === 'trending' && !VIRAL_IDS.has(r.id)) || (cat === 'wraps' && r.cat !== 'wraps') ? 1 : 0;
     if (n === q) return 0;
     if (n.startsWith(q)) return 1;
     if (n.includes(q)) return 2;
@@ -131,6 +131,7 @@ function searchRecipes(query, cat) {
   };
   return RECIPES.filter(r => {
     if (cat === 'trending') { if (!r.tags.includes('trending')) return false; }
+    else if (cat === 'wraps') { if (r.cat !== 'wraps' && !r.tags.includes('wraps')) return false; }
     else if (cat !== 'all' && r.cat !== cat) return false;
     if (!tokens.length) return true;
     const hay = [r.name, r.cat, catOf(r.cat)?.label || '', ...r.tags, ...r.ing.map(i => i[1].replace('?', '') + ' ' + (i[2] || ''))].join(' | ').toLowerCase();

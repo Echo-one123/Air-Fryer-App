@@ -16,6 +16,7 @@ const CATEGORIES = [
   { id: 'sides', label: 'Sides', emoji: '🍟' },
   { id: 'snacks', label: 'Snacks', emoji: '🧀' },
   { id: 'desserts', label: 'Desserts', emoji: '🍫' },
+  { id: 'wraps', label: 'Wraps', emoji: '🌯' },
   { id: 'breakfast', label: 'Breakfast', emoji: '🍳' },
   { id: 'frozen', label: 'From Frozen', emoji: '🧊' }
 ];
@@ -104,7 +105,7 @@ const RECIPES = [
   {
     id: 'chicken-fajitas', name: 'Chicken Fajita Traybake', emoji: '🌮', cat: 'chicken',
     temp: 200, time: 15, prep: 10, serves: 3, turn: 'shake',
-    tags: ['mexican', 'weeknight', 'family', 'quick'],
+    tags: ['wraps', 'mexican', 'weeknight', 'family', 'quick'],
     ing: [['2', 'chicken breast', 'sliced into strips'], ['2', 'bell peppers', 'sliced'], ['1', 'red onion', 'sliced'], ['2 tbsp', 'fajita seasoning'], ['1 tbsp', 'oil'], ['6', 'tortilla wraps'], ['50g', '?cheddar', 'grated'], ['2 tbsp', '?greek yoghurt', 'instead of soured cream'], ['1', '?lime', 'cut into wedges']],
     steps: [
       'Toss the chicken, peppers and onion with the fajita seasoning and oil.',

@@ -97,7 +97,7 @@ RECIPES.push(
   {
     id: "chicken-shawarma", name: "Chicken Shawarma Wraps", emoji: "🌯", cat: "chicken",
     temp: 200, time: 16, prep: 15, serves: 4, turn: "shake",
-    tags: ["middle eastern", "fakeaway", "wraps"],
+    tags: ["wraps", "middle eastern", "fakeaway", "wraps"],
     ing: [["6", "chicken thighs", "boneless, skinless"], ["1 tsp", "cumin"], ["1 tsp", "paprika"], ["½ tsp", "cinnamon"], ["½ tsp", "ground coriander"], ["2 cloves", "garlic", "crushed"], ["1", "lemon", "juiced"], ["1 tbsp", "oil"], ["½ tsp", "salt"], ["4", "pitta bread"], ["100g", "greek yoghurt"], ["to serve", "?lettuce"], ["½", "?cucumber"], ["1", "?red onion", "thinly sliced"]],
     steps: [
       "Mix the spices, garlic, half the lemon juice, oil and salt. Coat the chicken and marinate for 30 minutes if you can.",
@@ -197,7 +197,7 @@ RECIPES.push(
   {
     id: "steak-fajitas", name: "Steak Fajitas", emoji: "🌮", cat: "beef",
     temp: 200, time: 10, prep: 10, serves: 3, turn: "shake",
-    tags: ["mexican", "quick", "fakeaway"],
+    tags: ["wraps", "mexican", "quick", "fakeaway"],
     ing: [["400g", "beef steak", "rump, thinly sliced"], ["2", "bell peppers", "sliced"], ["1", "onion", "sliced"], ["2 tbsp", "fajita seasoning"], ["1 tbsp", "oil"], ["6", "tortilla wraps"], ["4 tbsp", "?salsa"], ["4 tbsp", "?greek yoghurt"], ["1", "?lime"]],
     steps: [
       "Toss the peppers and onion in half the oil and seasoning. Cook at 200°C for 5 minutes.",
@@ -245,7 +245,7 @@ RECIPES.push(
   {
     id: "beef-taquitos", name: "Cheesy Beef Taquitos", emoji: "🌯", cat: "beef",
     temp: 200, time: 8, prep: 20, serves: 4, turn: "flip",
-    tags: ["trending", "mexican", "party", "kids", "fakeaway"],
+    tags: ["wraps", "trending", "mexican", "party", "kids", "fakeaway"],
     ing: [["400g", "beef mince"], ["2 tbsp", "fajita seasoning"], ["4 tbsp", "salsa"], ["100g", "cheddar", "grated"], ["8", "tortilla wraps", "small"], ["spray", "oil"], ["4 tbsp", "?greek yoghurt"]],
     steps: [
       "Brown the mince in a pan, stir in the seasoning and salsa and cook for 5 minutes. Cool slightly.",
@@ -501,7 +501,7 @@ RECIPES.push(
   {
     id: "lamb-flatbreads", name: "Spiced Lamb Flatbreads", emoji: "🫓", cat: "lamb",
     temp: 200, time: 8, prep: 10, serves: 2, turn: "none",
-    tags: ["quick", "middle eastern", "lunch"],
+    tags: ["wraps", "quick", "middle eastern", "lunch"],
     ing: [["2", "naan", "or large flatbreads"], ["250g", "lamb mince"], ["1 tsp", "cumin"], ["½ tsp", "cinnamon"], ["1 clove", "garlic", "crushed"], ["½ tsp", "salt"], ["50g", "feta", "crumbled"], ["2 tbsp", "?greek yoghurt"], ["1 tbsp", "?parsley"]],
     steps: [
       "Mix the lamb, spices, garlic and salt.",
@@ -575,7 +575,7 @@ RECIPES.push(
   {
     id: "fish-tacos", name: "Crispy Fish Tacos", emoji: "🌮", cat: "fish",
     temp: 200, time: 10, prep: 15, serves: 3, turn: "flip",
-    tags: ["mexican", "summer", "fakeaway"],
+    tags: ["wraps", "mexican", "summer", "fakeaway"],
     ing: [["400g", "white fish fillets", "cut into fingers"], ["40g", "plain flour"], ["1", "eggs"], ["80g", "breadcrumbs"], ["1 tsp", "paprika"], ["½ tsp", "cumin"], ["½ tsp", "salt"], ["spray", "oil"], ["6", "tortilla wraps", "small"], ["4 tbsp", "mayonnaise"], ["1", "lime"], ["to serve", "?lettuce", "shredded (or cabbage)"], ["1", "?red chilli"]],
     steps: [
       "Season the breadcrumbs with paprika, cumin and salt.",
@@ -769,7 +769,7 @@ RECIPES.push(
   {
     id: "bean-cheese-quesadillas", name: "Black Bean & Cheese Quesadillas", emoji: "🫓", cat: "veggie",
     temp: 190, time: 6, prep: 10, serves: 2, turn: "flip",
-    tags: ["vegetarian", "mexican", "quick", "lunch"],
+    tags: ["wraps", "vegetarian", "mexican", "quick", "lunch"],
     ing: [["4", "tortilla wraps"], ["200g", "black beans", "drained"], ["100g", "cheddar", "grated"], ["100g", "sweetcorn"], ["1 tsp", "fajita seasoning"], ["3 tbsp", "salsa"], ["spray", "oil"]],
     steps: [
       "Lightly mash the beans with the seasoning and salsa.",
