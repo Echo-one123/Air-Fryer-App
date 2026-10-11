@@ -237,7 +237,7 @@ RECIPES.push(
     ] },
   { id: "wrap-christmas-leftovers", name: "Christmas Leftovers Wrap", emoji: "🎄", cat: "wraps", temp: 190, time: 12, prep: 10, serves: 2, turn: "flip",
     tags: ["wraps", "christmas", "leftovers", "festive"],
-    ing: [["200g", "turkey breast", "cooked leftovers, sliced"], ["6", "cocktail sausages", "for pigs in blankets"], ["3 rashers", "bacon", "streaky, halved"], ["2 balls", "breadcrumbs", "leftover stuffing"], ["2 tbsp", "jam", "cranberry sauce"], ["1 tbsp", "mayonnaise"], ["1 handful", "?brussels sprouts", "cooked, shredded"], ["40g", "?cheddar", "or brie"], ["2", "tortilla wraps", "large"]],
+    ing: [["200g", "turkey breast", "cooked leftovers, sliced"], ["6", "cocktail sausages", "for pigs in blankets"], ["3 rashers", "bacon", "streaky, halved"], ["2 balls", "breadcrumbs", "leftover stuffing"], ["2 tbsp", "cranberry sauce"], ["1 tbsp", "mayonnaise"], ["1 handful", "?brussels sprouts", "cooked, shredded"], ["40g", "?cheddar", "or brie"], ["2", "tortilla wraps", "large"]],
     steps: [
       "Wrap each cocktail sausage in half a bacon rasher. Cook at 190°C for 10 minutes, turning at halfway, until crisp and 75°C inside.",
       "Add the turkey and stuffing to the basket for the last 3 minutes to reheat until piping hot (75°C).",

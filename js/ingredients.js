@@ -109,6 +109,7 @@ const CATALOGUE = {
     'golden syrup|lyles golden syrup',
     'jam|strawberry jam, raspberry jam, jelly jam',
     'marmalade|orange marmalade',
+    'cranberry sauce|cranberry jelly, cranberry',
     'peanut butter|smooth peanut butter, crunchy peanut butter',
     'harissa|harissa paste',
     'gochujang|korean chilli paste, gochujang paste',
@@ -353,5 +354,8 @@ const Ingredients = (() => {
     .replace(/\bbbq\b/g, 'BBQ').replace(/\bworcestershire\b/g, 'Worcestershire')
     .replace(/\bgreek\b/g, 'Greek').replace(/\bbrussels\b/g, 'Brussels').replace(/\bcajun\b/g, 'Cajun');
 
-  return { resolve, suggest, type, group, isStaple, known, clean, stem, pretty };
+  /** Exact name/synonym match only (no word-dropping) – used by search. */
+  const resolveExact = input => lookup.get(stem(input)) || null;
+
+  return { resolve, resolveExact, suggest, type, group, isStaple, known, clean, stem, pretty };
 })();
