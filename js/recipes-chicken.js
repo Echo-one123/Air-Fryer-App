@@ -69,7 +69,7 @@ RECIPES.push(
     id: "thai-basil-chicken-lettuce-cups", name: "Thai Basil Chicken Lettuce Cups", emoji: "🥬", cat: "chicken",
     temp: 200, time: 12, prep: 10, serves: 3, turn: "shake",
     tags: ["thai", "low carb", "high protein", "quick"],
-    ing: [["500g", "turkey mince", "or minced chicken"], ["3 cloves", "garlic", "crushed"], ["1", "red chilli", "finely chopped"], ["2 tbsp", "soy sauce"], ["1 tbsp", "honey"], ["1", "lime", "juiced"], ["1 small bunch", "fresh coriander", "or Thai basil if you can find it"], ["1", "lettuce", "Little Gem leaves"], ["2", "?spring onions", "sliced"]],
+    ing: [["500g", "turkey mince", "or minced chicken"], ["3 cloves", "garlic", "crushed"], ["1", "red chilli", "finely chopped"], ["2 tbsp", "soy sauce"], ["1 tbsp", "honey"], ["1", "lime", "juiced"], ["1 small bunch", "basil", "Thai basil ideally"], ["1", "lettuce", "Little Gem leaves"], ["2", "?spring onions", "sliced"]],
     steps: [
       "Mix the mince with the garlic, chilli, soy and honey. Spread in a thin layer in a lined basket or a small tin.",
       "Cook at 200°C for 12 minutes, breaking it up with a fork at halfway.",
@@ -81,7 +81,7 @@ RECIPES.push(
     id: "thai-green-chicken-skewers", name: "Thai Green Curry Chicken Skewers", emoji: "🍢", cat: "chicken",
     temp: 200, time: 14, prep: 15, serves: 4, turn: "flip",
     tags: ["thai", "skewers", "bbq", "gluten-free"],
-    ing: [["600g", "chicken thighs", "boneless, chunks"], ["4 tbsp", "coconut milk"], ["1 bunch", "fresh coriander", "or 2 tbsp Thai green curry paste"], ["1", "red chilli", "use green if you have it"], ["3 cloves", "garlic"], ["1 thumb", "ginger"], ["1", "lime", "zest and juice"], ["1 tsp", "brown sugar"], ["½ tsp", "salt"]],
+    ing: [["600g", "chicken thighs", "boneless, chunks"], ["4 tbsp", "coconut milk"], ["2 tbsp", "thai curry paste", "green"], ["1 small bunch", "?fresh coriander"], ["1", "red chilli", "use green if you have it"], ["3 cloves", "garlic"], ["1 thumb", "ginger"], ["1", "lime", "zest and juice"], ["1 tsp", "brown sugar"], ["½ tsp", "salt"]],
     steps: [
       "Blitz the coriander, chilli, garlic, ginger, lime, sugar, salt and coconut milk into a green paste. Coat the chicken and marinate for 30 minutes.",
       "Thread onto short skewers (soak wooden ones first) that fit your basket.",
@@ -93,7 +93,7 @@ RECIPES.push(
     id: "vietnamese-lemongrass-chicken", name: "Vietnamese Lemongrass-Style Chicken", emoji: "🍋", cat: "chicken",
     temp: 200, time: 18, prep: 10, serves: 4, turn: "flip",
     tags: ["vietnamese", "rice bowl", "dairy-free"],
-    ing: [["6", "chicken thighs", "boneless, skin on"], ["2", "lime", "zest and juice – stands in for lemongrass"], ["3 cloves", "garlic", "crushed"], ["1 thumb", "ginger", "grated"], ["2 tbsp", "soy sauce", "or fish sauce"], ["1 tbsp", "brown sugar"], ["1 tbsp", "oil"], ["1", "?red chilli", "sliced"], ["1 tbsp", "?fresh coriander"]],
+    ing: [["6", "chicken thighs", "boneless, skin on"], ["2 stalks", "lemongrass", "finely chopped (or 2 tsp paste)"], ["1", "lime", "zest and juice"], ["3 cloves", "garlic", "crushed"], ["1 thumb", "ginger", "grated"], ["2 tbsp", "soy sauce", "or fish sauce"], ["1 tbsp", "brown sugar"], ["1 tbsp", "oil"], ["1", "?red chilli", "sliced"], ["1 tbsp", "?fresh coriander"]],
     steps: [
       "Mix the lime zest and juice, garlic, ginger, soy, sugar and oil. Coat the chicken and marinate for 30 minutes (or use 2 sticks finely chopped lemongrass if you have them).",
       "Lay skin-side down in the basket and cook at 200°C for 18 minutes, turning skin-side up at halfway.",
@@ -203,7 +203,7 @@ RECIPES.push(
     id: "chicken-tinga-tacos", name: "Mexican Chicken Tinga Tacos", emoji: "🌮", cat: "chicken",
     temp: 200, time: 18, prep: 10, serves: 4, turn: "flip",
     tags: ["mexican", "tacos", "family"],
-    ing: [["4", "chicken thighs", "boneless"], ["1 tsp", "paprika", "smoked"], ["1 tbsp", "oil"], ["1", "onion", "sliced"], ["2 cloves", "garlic", "crushed"], ["200ml", "passata"], ["1 tbsp", "hot sauce", "chipotle ideally"], ["½ tsp", "oregano"], ["8", "tortilla wraps", "small"], ["1", "?avocado", "sliced"], ["2 tbsp", "?sour cream"], ["1 tbsp", "?fresh coriander"]],
+    ing: [["4", "chicken thighs", "boneless"], ["1 tsp", "paprika", "smoked"], ["1 tbsp", "oil"], ["1", "onion", "sliced"], ["2 cloves", "garlic", "crushed"], ["200ml", "passata"], ["1 tbsp", "chipotle paste"], ["½ tsp", "oregano"], ["8", "tortilla wraps", "small"], ["1", "?avocado", "sliced"], ["2 tbsp", "?sour cream"], ["1 tbsp", "?fresh coriander"]],
     steps: [
       "Rub the chicken with smoked paprika, oil and salt. Cook at 200°C for 18 minutes, turning at halfway.",
       "Check the chicken has reached 75°C, then shred with two forks.",
@@ -215,7 +215,7 @@ RECIPES.push(
     id: "chipotle-chicken-burrito-bowl", name: "Chipotle-Style Chicken Burrito Bowl", emoji: "🥙", cat: "chicken",
     temp: 200, time: 18, prep: 10, serves: 4, turn: "flip",
     tags: ["mexican", "meal prep", "high protein", "trending"],
-    ing: [["6", "chicken thighs", "boneless"], ["2 tbsp", "hot sauce", "chipotle ideally"], ["1 tsp", "paprika", "smoked"], ["1 tsp", "cumin"], ["½ tsp", "oregano"], ["1", "lime", "juiced"], ["1 tbsp", "oil"], ["250g", "rice", "cooked"], ["400g", "black beans", "drained"], ["150g", "sweetcorn"], ["4 tbsp", "salsa"], ["1", "?avocado"], ["4 tbsp", "?sour cream"], ["1 tbsp", "?fresh coriander"]],
+    ing: [["6", "chicken thighs", "boneless"], ["2 tbsp", "chipotle paste"], ["1 tsp", "paprika", "smoked"], ["1 tsp", "cumin"], ["½ tsp", "oregano"], ["1", "lime", "juiced"], ["1 tbsp", "oil"], ["250g", "rice", "cooked"], ["400g", "black beans", "drained"], ["150g", "sweetcorn"], ["4 tbsp", "salsa"], ["1", "?avocado"], ["4 tbsp", "?sour cream"], ["1 tbsp", "?fresh coriander"]],
     steps: [
       "Mix the hot sauce, paprika, cumin, oregano, half the lime juice, oil and a pinch of salt. Coat the chicken and marinate for 20 minutes.",
       "Cook at 200°C for 18 minutes, turning at halfway, until charred.",
@@ -289,7 +289,7 @@ RECIPES.push(
     id: "chicken-saltimbocca", name: "Italian Chicken Saltimbocca", emoji: "🇮🇹", cat: "chicken",
     temp: 190, time: 14, prep: 10, serves: 2, turn: "flip",
     tags: ["italian", "low carb", "dinner party"],
-    ing: [["2", "chicken breast", "butterflied and flattened"], ["4 slices", "ham", "prosciutto or Parma ham"], ["4", "mixed herbs", "fresh sage leaves ideally, or 1 tsp dried"], ["1 tbsp", "oil"], ["15g", "butter"], ["½", "lemon", "juiced"], ["2 tbsp", "?parmesan", "grated"]],
+    ing: [["2", "chicken breast", "butterflied and flattened"], ["4 slices", "prosciutto"], ["4 leaves", "sage", "or 1 tsp dried"], ["1 tbsp", "oil"], ["15g", "butter"], ["½", "lemon", "juiced"], ["2 tbsp", "?parmesan", "grated"]],
     steps: [
       "Season the flattened chicken, lay sage on top and wrap each piece in 2 slices of ham. Brush with oil.",
       "Cook at 190°C for 14 minutes, turning carefully at halfway, until the ham is crisp.",
