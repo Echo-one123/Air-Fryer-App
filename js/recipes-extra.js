@@ -47,7 +47,7 @@ RECIPES.push(
   {
     id: "garlic-parmesan-wings", name: "Garlic Parmesan Wings", emoji: "🧄", cat: "chicken",
     temp: 200, time: 22, prep: 5, serves: 2, turn: "shake",
-    tags: ["party", "crispy", "gluten-free"],
+    tags: ["trending", "party", "crispy", "gluten-free"],
     ing: [["800g", "chicken wings"], ["1 tbsp", "cornflour"], ["1 tsp", "salt"], ["30g", "butter", "melted"], ["3 cloves", "garlic", "crushed"], ["30g", "parmesan", "finely grated"], ["1 tbsp", "?parsley", "chopped"]],
     steps: [
       "Pat the wings dry and toss with the cornflour and salt.",
@@ -59,7 +59,7 @@ RECIPES.push(
   {
     id: "chicken-katsu", name: "Chicken Katsu Curry", emoji: "🍛", cat: "chicken",
     temp: 200, time: 14, prep: 15, serves: 2, turn: "flip",
-    tags: ["fakeaway", "japanese", "curry", "crispy"],
+    tags: ["trending", "fakeaway", "japanese", "curry", "crispy"],
     ing: [["2", "chicken breast", "butterflied and flattened"], ["40g", "plain flour"], ["1", "eggs", "beaten"], ["80g", "breadcrumbs", "panko"], ["spray", "oil"], ["1 tbsp", "curry powder"], ["1", "onion", "finely chopped"], ["1", "carrots", "grated"], ["1 tbsp", "soy sauce"], ["1 tsp", "honey"], ["300ml", "water"], ["1 tbsp", "cornflour"], ["to serve", "?rice"]],
     steps: [
       "For the sauce: soften the onion and carrot in a little oil in a pan for 5 minutes. Stir in the curry powder, then the water, soy and honey. Simmer for 10 minutes.",
@@ -209,7 +209,7 @@ RECIPES.push(
   {
     id: "garlic-steak-bites", name: "Garlic Butter Steak Bites", emoji: "🥩", cat: "beef",
     temp: 200, time: 8, prep: 5, serves: 2, turn: "shake",
-    tags: ["quick", "low-carb", "gluten-free", "date night"],
+    tags: ["trending", "quick", "low-carb", "gluten-free", "date night"],
     ing: [["400g", "beef steak", "sirloin or rump, 2.5cm cubes"], ["1 tbsp", "oil"], ["½ tsp", "salt"], ["½ tsp", "black pepper"], ["25g", "butter", "melted"], ["2 cloves", "garlic", "crushed"], ["1 tbsp", "?parsley", "chopped"]],
     steps: [
       "Toss the steak with the oil, salt and pepper.",
@@ -245,7 +245,7 @@ RECIPES.push(
   {
     id: "beef-taquitos", name: "Cheesy Beef Taquitos", emoji: "🌯", cat: "beef",
     temp: 200, time: 8, prep: 20, serves: 4, turn: "flip",
-    tags: ["mexican", "party", "kids", "fakeaway"],
+    tags: ["trending", "mexican", "party", "kids", "fakeaway"],
     ing: [["400g", "beef mince"], ["2 tbsp", "fajita seasoning"], ["4 tbsp", "salsa"], ["100g", "cheddar", "grated"], ["8", "tortilla wraps", "small"], ["spray", "oil"], ["4 tbsp", "?greek yoghurt"]],
     steps: [
       "Brown the mince in a pan, stir in the seasoning and salsa and cook for 5 minutes. Cool slightly.",
@@ -563,7 +563,7 @@ RECIPES.push(
   {
     id: "teriyaki-salmon", name: "Teriyaki Salmon Bites", emoji: "🍣", cat: "fish",
     temp: 200, time: 8, prep: 15, serves: 2, turn: "shake",
-    tags: ["asian", "quick", "sticky"],
+    tags: ["trending", "asian", "quick", "sticky"],
     ing: [["2", "salmon fillets", "skinless, 3cm cubes"], ["3 tbsp", "teriyaki sauce"], ["1 tsp", "?sesame seeds"], ["2", "?spring onions", "sliced"], ["to serve", "?rice"]],
     steps: [
       "Toss the salmon in 2 tbsp teriyaki and marinate for 10 minutes.",
@@ -697,7 +697,7 @@ RECIPES.push(
   {
     id: "crispy-gnocchi", name: "Crispy Gnocchi with Pesto", emoji: "🥔", cat: "veggie",
     temp: 200, time: 14, prep: 3, serves: 2, turn: "shake",
-    tags: ["vegetarian", "quick", "italian"],
+    tags: ["trending", "vegetarian", "quick", "italian"],
     ing: [["500g", "gnocchi", "shop-bought, straight from the pack"], ["1 tbsp", "oil"], ["¼ tsp", "salt"], ["2 tbsp", "pesto"], ["200g", "?cherry tomatoes"], ["20g", "parmesan", "grated"]],
     steps: [
       "Separate the gnocchi and toss with the oil and salt – no need to boil.",
@@ -878,7 +878,7 @@ RECIPES.push(
   {
     id: "smashed-potatoes", name: "Crispy Smashed Potatoes", emoji: "🥔", cat: "sides",
     temp: 200, time: 20, prep: 20, serves: 3, turn: "flip",
-    tags: ["vegetarian", "gluten-free", "crispy"],
+    tags: ["trending", "vegetarian", "gluten-free", "crispy"],
     ing: [["600g", "new potatoes"], ["2 tbsp", "oil"], ["1 tsp", "salt"], ["2 cloves", "garlic", "crushed"], ["20g", "?parmesan"], ["1 tbsp", "?parsley"]],
     steps: [
       "Boil the potatoes for 15 minutes until tender. Drain and steam-dry.",
