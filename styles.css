@@ -407,3 +407,7 @@ button.ing-row { cursor: pointer; }
 }
 
 .hot { font-size: .9em; }
+.cat-tip { background: var(--brand-soft); border-radius: 14px; padding: 4px 16px; margin: 4px 0 10px; }
+.cat-tip summary { cursor: pointer; font-weight: 800; min-height: 44px; display: flex; align-items: center; }
+.cat-tip ul { margin: 0 0 12px; padding-left: 1.2em; }
+.cat-tip li { margin: 6px 0; font-size: .92rem; }

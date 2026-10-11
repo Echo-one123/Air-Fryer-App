@@ -149,6 +149,12 @@ function renderSearch() {
   renderCatChips();
   const results = searchRecipes(state.query, state.cat);
   $('#searchClear').hidden = !state.query;
+  const tip = CATEGORY_TIPS[state.cat];
+  $('#catTip').innerHTML = tip
+    ? `<details class="cat-tip" ${Store.get('af.tipSeen.' + state.cat, false) ? '' : 'open'}><summary>${esc(tip.title)}</summary><ul>${tip.tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>`
+    : '';
+  // Show the tips open the first time only; after that they start collapsed (tap to open).
+  if (tip) Store.set('af.tipSeen.' + state.cat, true);
   $('#resultCount').textContent = `${results.length} recipe${results.length === 1 ? '' : 's'}`;
   $('#searchResults').innerHTML = results.length
     ? results.map(r => recipeCard(r)).join('')
