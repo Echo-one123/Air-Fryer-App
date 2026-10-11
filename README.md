@@ -4,7 +4,7 @@ An air fryer recipe app you can install on your phone. It's a Progressive Web Ap
 
 ## Features
 
-- **Search**: 607 built-in recipes covering chicken, beef, pork, lamb, fish, veggie, sides, snacks, desserts, wraps, Pyrex dish bakes, pasta, breakfast and from-frozen cooking guides. **🔥 Trending** and **🍯 Honey Roast** filters too. Search matches recipe names, ingredients and tags, and understands synonyms ("shrimp" finds prawns). Category chips filter the list.
+- **Search**: 1,120 built-in recipes across 16 categories (chicken, beef, pork, lamb, fish, veggie, sides, snacks, desserts, wraps, Dump & Go, Pyrex dish, pasta, breakfast, from-frozen and reheat & leftovers), with world cuisines from Indian to Korean. Quick filters: 🔥 Trending, 🍯 Honey Roast, ⚡ Quick, 🥗 Healthy, 🌱 Vegetarian, 🌿 Vegan, 🧒 Kids and 💷 Budget. Results load 40 at a time. Search matches recipe names, ingredients and tags, and understands synonyms ("shrimp" finds prawns). Category chips filter the list.
 - **My Kitchen**
   - Add what you've got with autocomplete or quick-add chips. It understands synonyms: *steak* → beef steak, *mince* → beef mince, *chips* → potatoes, *shrimp* → prawns, and many more. You can add several at once, e.g. `chicken, broccoli and soy`.
   - **Recipe idea**: picks a protein, up to 2 veg and a flavour style based on your sauces (honey soy, sweet chilli, BBQ, lemon garlic, peri-peri, teriyaki, Cajun, tikka and more). It works out the timings so everything finishes together ("put the potatoes in first, add the chicken after 4 minutes"), and includes safe internal temperatures for meat.
@@ -23,7 +23,7 @@ manifest.json       PWA manifest (name, colours, icons)
 sw.js               service worker (offline cache)
 js/ingredients.js   ingredient catalogue + synonyms + autocomplete
 js/recipes.js       the recipe database
-js/recipes-*.js     more recipes (extra, trending, takeaway, british, frozen, wraps, chicken, pyrex, desserts, honey, pasta)
+js/recipes-*.js     more recipe files, one per theme (all added to the same list)
 js/kitchen.js       recipe-idea generator, timings, safe temps, ranking
 js/timer.js         cooking timer (beeps, vibration, halfway reminders)
 js/app.js           UI, routing, storage

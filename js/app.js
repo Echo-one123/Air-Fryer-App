@@ -18,6 +18,7 @@ const state = {
   flavour: Store.get('af.flavour', 'auto'),
   theme: Store.get('af.theme', 'auto'),
   cat: 'all',
+  limit: 40,
   query: '',
   ticks: Store.get('af.ticks', {}),          // ticked-off steps per recipe
   view: 'search',
@@ -108,11 +109,38 @@ function recipeCard(r, { missing = null, showHave = true } = {}) {
 }
 
 /* ───────────────────────── SEARCH ───────────────────────── */
+/* Smart filters shown in the first chip row (categories are the second row). */
+const hasTag = (r, ...tags) => r.tags.some(t => tags.includes(t));
+const MEATY = new Set(['meat', 'fish']);
+const isVeggie = r => !r.ing.some(i => MEATY.has(Ingredients.type(i[1].replace(/^\?/, '')))) &&
+  (r.cat === 'veggie' || hasTag(r, 'vegetarian', 'vegan') || ['desserts', 'sides', 'snacks', 'breakfast', 'pasta', 'pyrex', 'wraps'].includes(r.cat));
+const FILTERS = [
+  { id: 'all', label: 'All', emoji: '🍽️', test: () => true },
+  { id: 'trending', label: 'Trending', emoji: '🔥', test: r => r.tags.includes('trending'), first: r => VIRAL_IDS.has(r.id) },
+  { id: 'honey', label: 'Honey Roast', emoji: '🍯', test: r => r.tags.includes('honey roast') || /honey/i.test(r.name), first: r => r.tags.includes('honey roast') },
+  { id: 'quick', label: 'Quick (20 min)', emoji: '⚡', test: r => r.time + (r.prep || 0) <= 20 },
+  { id: 'healthy', label: 'Healthy', emoji: '🥗', test: r => hasTag(r, 'healthy', 'low-carb', 'high-protein', 'light', 'low-calorie', 'meal prep', 'slimming') },
+  { id: 'vegetarian', label: 'Vegetarian', emoji: '🌱', test: isVeggie },
+  { id: 'vegan', label: 'Vegan', emoji: '🌿', test: r => r.tags.includes('vegan') },
+  { id: 'kids', label: 'Kids', emoji: '🧒', test: r => hasTag(r, 'kids', 'lunchbox') },
+  { id: 'budget', label: 'Budget', emoji: '💷', test: r => hasTag(r, 'budget', 'leftovers', 'cheap') }
+];
+// Categories that also collect matching recipes from other categories.
+const CAT_EXTRA = {
+  wraps: r => r.tags.includes('wraps'),
+  pasta: r => r.ing.some(i => /^\??(pasta|gnocchi)$/.test(i[1]))
+};
+
 function renderCatChips() {
-  const chips = [{ id: 'all', label: 'All', emoji: '🍽️' }, { id: 'trending', label: 'Trending', emoji: '🔥' }, { id: 'honey', label: 'Honey Roast', emoji: '🍯' }, ...CATEGORIES];
-  $('#catChips').innerHTML = chips.map(c =>
-    `<button class="chip ${state.cat === c.id ? 'active' : ''}" data-cat="${c.id}" aria-pressed="${state.cat === c.id}">${c.emoji} ${c.label}</button>`
-  ).join('');
+  const chip = c => `<button class="chip ${state.cat === c.id ? 'active' : ''}" data-cat="${c.id}" aria-pressed="${state.cat === c.id}">${c.emoji} ${c.label}</button>`;
+  $('#filterChips').innerHTML = FILTERS.map(chip).join('');
+  $('#catChips').innerHTML = CATEGORIES.map(chip).join('');
+}
+
+function inCategory(r, cat) {
+  const f = FILTERS.find(x => x.id === cat);
+  if (f) return f.test(r);
+  return r.cat === cat || (CAT_EXTRA[cat] ? CAT_EXTRA[cat](r) : false);
 }
 
 function searchRecipes(query, cat) {
@@ -122,7 +150,11 @@ function searchRecipes(query, cat) {
   // Best matches first: whole phrase in the name, then every word in the name, then the rest.
   const rank = r => {
     const n = r.name.toLowerCase().replace(/[^a-z0-9& ]+/g, ' ').replace(/\s+/g, ' ').trim();
-    if (!q) return (cat === 'trending' && !VIRAL_IDS.has(r.id)) || (cat === 'wraps' && r.cat !== 'wraps') || (cat === 'pasta' && r.cat !== 'pasta') || (cat === 'honey' && !r.tags.includes('honey roast')) ? 1 : 0;
+    if (!q) {
+      const f = FILTERS.find(x => x.id === cat);
+      if (f && f.first) return f.first(r) ? 0 : 1;
+      return CAT_EXTRA[cat] && r.cat !== cat ? 1 : 0;
+    }
     if (n === q) return 0;
     if (n.startsWith(q)) return 1;
     if (n.includes(q)) return 2;
@@ -130,11 +162,7 @@ function searchRecipes(query, cat) {
     return 4;
   };
   return RECIPES.filter(r => {
-    if (cat === 'trending') { if (!r.tags.includes('trending')) return false; }
-    else if (cat === 'honey') { if (!r.tags.includes('honey roast') && !/honey/i.test(r.name)) return false; }
-    else if (cat === 'wraps') { if (r.cat !== 'wraps' && !r.tags.includes('wraps')) return false; }
-    else if (cat === 'pasta') { if (r.cat !== 'pasta' && !r.ing.some(i => /^\??(pasta|gnocchi)$/.test(i[1]))) return false; }
-    else if (cat !== 'all' && r.cat !== cat) return false;
+    if (!inCategory(r, cat)) return false;
     if (!tokens.length) return true;
     const hay = [r.name, r.cat, catOf(r.cat)?.label || '', ...r.tags, ...r.ing.map(i => i[1].replace('?', '') + ' ' + (i[2] || ''))].join(' | ').toLowerCase();
     const stemHay = Ingredients.stem(hay);
@@ -158,19 +186,35 @@ function renderSearch() {
   // Show the tips open the first time only; after that they start collapsed (tap to open).
   if (tip) Store.set('af.tipSeen.' + state.cat, true);
   $('#resultCount').textContent = `${results.length} recipe${results.length === 1 ? '' : 's'}`;
+  // Show results in pages so a big library stays quick on phones.
+  const shown = results.slice(0, state.limit);
+  const left = results.length - shown.length;
   $('#searchResults').innerHTML = results.length
-    ? results.map(r => recipeCard(r)).join('')
+    ? shown.map(r => recipeCard(r)).join('') +
+      (left > 0 ? `<button class="btn big show-more" id="showMore">Show more (${left} more)</button>` : '')
     : `<div class="empty"><div class="empty-emoji">🤔</div><h2>No recipes found</h2><p>Try another word, or clear the filter.</p></div>`;
 }
 
-$('#searchInput').addEventListener('input', e => { state.query = e.target.value; renderSearch(); });
+const PAGE = 40;
+$('#searchResults').addEventListener('click', e => {
+  if (!e.target.closest('#showMore')) return;
+  state.limit += PAGE;
+  const y = window.scrollY;
+  renderSearch();
+  window.scrollTo(0, y);
+});
+
+$('#searchInput').addEventListener('input', e => { state.query = e.target.value; state.limit = PAGE; renderSearch(); });
 $('#searchClear').addEventListener('click', () => { state.query = ''; $('#searchInput').value = ''; renderSearch(); $('#searchInput').focus(); });
-$('#catChips').addEventListener('click', e => {
+const onChip = e => {
   const b = e.target.closest('[data-cat]');
   if (!b) return;
   state.cat = b.dataset.cat;
+  state.limit = PAGE;
   renderSearch();
-});
+};
+$('#filterChips').addEventListener('click', onChip);
+$('#catChips').addEventListener('click', onChip);
 
 /* ───────────────────────── MY KITCHEN ───────────────────────── */
 function addIngredient(text, { quiet = false } = {}) {
