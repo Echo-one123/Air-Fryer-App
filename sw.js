@@ -1,6 +1,6 @@
 /* Service worker: caches the whole app so it works offline.
  * Bump VERSION whenever you change any file so phones pick up the update. */
-const VERSION = 'v6';
+const VERSION = 'v7';
 const CACHE = `air-fryer-${VERSION}`;
 const ASSETS = [
   './',
@@ -26,6 +26,24 @@ const ASSETS = [
   'js/recipes-pyrex-4.js',
   'js/recipes-honey.js',
   'js/recipes-pasta.js',
+  'js/recipes-beef-2.js',
+  'js/recipes-pork-2.js',
+  'js/recipes-lamb-2.js',
+  'js/recipes-fish-2.js',
+  'js/recipes-veggie-2.js',
+  'js/recipes-vegan.js',
+  'js/recipes-sides-2.js',
+  'js/recipes-snacks-2.js',
+  'js/recipes-breakfast-2.js',
+  'js/recipes-indian.js',
+  'js/recipes-east-asian.js',
+  'js/recipes-world.js',
+  'js/recipes-healthy.js',
+  'js/recipes-kids-budget.js',
+  'js/recipes-roasts-bbq.js',
+  'js/recipes-reheat.js',
+  'js/recipes-dumpgo.js',
+  'js/recipes-dumpgo-2.js',
   'js/kitchen.js',
   'js/timer.js',
   'js/app.js',

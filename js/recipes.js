@@ -17,14 +17,26 @@ const CATEGORIES = [
   { id: 'snacks', label: 'Snacks', emoji: '🧀' },
   { id: 'desserts', label: 'Desserts', emoji: '🍫' },
   { id: 'wraps', label: 'Wraps', emoji: '🌯' },
+  { id: 'dumpgo', label: 'Dump & Go', emoji: '🫕' },
   { id: 'pyrex', label: 'Pyrex Dish', emoji: '🥘' },
   { id: 'pasta', label: 'Pasta', emoji: '🍝' },
   { id: 'breakfast', label: 'Breakfast', emoji: '🍳' },
-  { id: 'frozen', label: 'From Frozen', emoji: '🧊' }
+  { id: 'frozen', label: 'From Frozen', emoji: '🧊' },
+  { id: 'reheat', label: 'Reheat & Leftovers', emoji: '♻️' }
 ];
 
 // Shown above the results when a category chip is selected.
 const CATEGORY_TIPS = {
+  dumpgo: {
+    title: '🫕 Dump & Go: bung it in and press start',
+    tips: [
+      'Everything goes in raw – no browning, boiling or pre-cooking. Chop, toss, tip in, start the timer.',
+      'Cut things to similar sizes so they finish together: dense veg (potatoes, carrots) smaller, quick-cooking veg bigger.',
+      'Use an oven-safe dish, foil tray or silicone liner that leaves a gap round the edge for the air to flow.',
+      'Give it one stir or shake at halfway – the timer will remind you.',
+      'Always check meat is cooked through before serving: chicken, mince and sausages 75°C, pork 71°C, fish 63°C.'
+    ]
+  },
   pyrex: {
     title: '🥘 Cooking in a Pyrex dish',
     tips: [
