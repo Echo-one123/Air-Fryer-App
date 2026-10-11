@@ -184,7 +184,7 @@ RECIPES.push(
       "Rest 2 minutes, then slice and serve."
     ] },
   { id: "chicken-caesar-wraps", name: "Chicken Caesar Wraps", emoji: "🌯", cat: "chicken", temp: 190, time: 18, prep: 10, serves: 2, turn: "flip",
-    tags: ["lunch", "high protein", "meal prep"],
+    tags: ["wraps", "lunch", "high protein", "meal prep"],
     ing: [["2", "chicken breast"], ["1 tsp", "oil"], ["½ tsp", "garlic granules"], ["4 rashers", "?bacon", "streaky"], ["2", "tortilla wraps"], ["1", "lettuce", "romaine, shredded"], ["30g", "parmesan", "grated"], ["3 tbsp", "mayonnaise"], ["1", "lemon", "juice"], ["½ tsp", "worcestershire sauce"], ["½ tsp", "salt"]],
     steps: [
       "Rub the chicken with oil, garlic granules and salt. Cook at 190°C for 16–18 minutes, turning at halfway, adding the bacon for the last 6 minutes.",
@@ -210,7 +210,7 @@ RECIPES.push(
       "Layer each muffin with a patty, a slice of cheese and an egg. Return to the basket for 1 minute to melt the cheese."
     ] },
   { id: "breakfast-burritos", name: "Breakfast Burritos", emoji: "🌯", cat: "breakfast", temp: 190, time: 8, prep: 15, serves: 2, turn: "flip",
-    tags: ["trending", "brunch", "meal prep", "freezer friendly"],
+    tags: ["wraps", "trending", "brunch", "meal prep", "freezer friendly"],
     ing: [["4 rashers", "bacon", "or 2 sausages, cooked"], ["4", "eggs", "scrambled"], ["2", "hash browns", "cooked"], ["50g", "cheddar", "grated"], ["2", "tortilla wraps", "large"], ["2 tbsp", "?salsa"], ["1", "?avocado", "sliced"], ["spray", "oil"]],
     steps: [
       "Cook the bacon and hash browns in the air fryer at 200°C for 10 minutes and softly scramble the eggs on the hob.",

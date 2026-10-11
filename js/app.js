@@ -131,6 +131,7 @@ function searchRecipes(query, cat) {
   };
   return RECIPES.filter(r => {
     if (cat === 'trending') { if (!r.tags.includes('trending')) return false; }
+    else if (cat === 'wraps') { if (r.cat !== 'wraps' && !r.tags.includes('wraps')) return false; }
     else if (cat !== 'all' && r.cat !== cat) return false;
     if (!tokens.length) return true;
     const hay = [r.name, r.cat, catOf(r.cat)?.label || '', ...r.tags, ...r.ing.map(i => i[1].replace('?', '') + ' ' + (i[2] || ''))].join(' | ').toLowerCase();

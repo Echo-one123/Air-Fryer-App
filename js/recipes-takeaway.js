@@ -111,7 +111,7 @@ RECIPES.push(
       "Build in toasted buns with mayo and shredded lettuce."
     ] },
   { id: "chicken-enchiladas", name: "Chicken Enchiladas", emoji: "🌯", cat: "chicken", temp: 180, time: 12, prep: 20, serves: 4, turn: "none",
-    tags: ["fakeaway", "mexican", "family", "cheesy"],
+    tags: ["wraps", "fakeaway", "mexican", "family", "cheesy"],
     ing: [["400g", "chicken breast", "cooked and shredded"], ["1", "onion", "chopped"], ["1", "bell peppers", "chopped"], ["2 tbsp", "fajita seasoning"], ["200g", "black beans", "drained"], ["400g", "passata"], ["1 tsp", "chilli powder"], ["4", "tortilla wraps"], ["120g", "cheddar", "grated"], ["3 tbsp", "?sour cream"], ["handful", "?fresh coriander"]],
     steps: [
       "Fry the onion and pepper for 5 minutes, add the chicken, beans and fajita seasoning and heat through until piping hot (75°C).",
@@ -120,7 +120,7 @@ RECIPES.push(
       "Air fry at 180°C for 10–12 minutes until bubbling and golden. Finish with sour cream and coriander."
     ] },
   { id: "chicken-quesadillas", name: "Chicken Quesadillas", emoji: "🧀", cat: "chicken", temp: 180, time: 8, prep: 10, serves: 2, turn: "flip",
-    tags: ["fakeaway", "mexican", "quick", "cheesy"],
+    tags: ["wraps", "fakeaway", "mexican", "quick", "cheesy"],
     ing: [["250g", "chicken breast", "cooked and shredded"], ["1 tsp", "fajita seasoning"], ["2", "tortilla wraps"], ["100g", "cheddar", "grated"], ["50g", "?mozzarella", "grated"], ["2", "spring onions", "sliced"], ["2 tbsp", "salsa"], ["1", "?red chilli", "sliced"], ["spray", "oil"]],
     steps: [
       "Toss the chicken with the fajita seasoning. Scatter half the cheese over one half of each tortilla, then the chicken, spring onions, salsa, chilli and the rest of the cheese.",
@@ -140,7 +140,7 @@ RECIPES.push(
 
   // ───────────── LAMB ─────────────
   { id: "doner-kebab", name: "Homemade Doner Kebab", emoji: "🥙", cat: "lamb", temp: 180, time: 30, prep: 15, serves: 4, turn: "flip",
-    tags: ["fakeaway", "trending", "kebab", "batch cook"],
+    tags: ["wraps", "fakeaway", "trending", "kebab", "batch cook"],
     ing: [["500g", "lamb mince", "20% fat is ideal"], ["1 tsp", "garlic granules"], ["1 tsp", "ground coriander"], ["1 tsp", "cumin"], ["1 tsp", "paprika"], ["1 tsp", "oregano"], ["½ tsp", "chilli powder"], ["1 tsp", "salt"], ["4", "pitta bread"], ["handful", "lettuce", "shredded"], ["1", "red onion", "sliced"], ["2", "tomatoes", "sliced"], ["3 tbsp", "?hot sauce"], ["3 tbsp", "?greek yoghurt", "garlic sauce"]],
     steps: [
       "Put the mince, spices and salt in a bowl and knead hard for 5 minutes until it turns smooth and paste-like – this gives the classic doner texture.",
@@ -150,7 +150,7 @@ RECIPES.push(
       "Stuff into warm pittas with salad, chilli sauce and garlic yoghurt."
     ] },
   { id: "lamb-gyros", name: "Lamb Gyros", emoji: "🥙", cat: "lamb", temp: 200, time: 12, prep: 15, serves: 4, turn: "shake",
-    tags: ["fakeaway", "greek", "wraps"],
+    tags: ["wraps", "fakeaway", "greek", "wraps"],
     ing: [["500g", "lamb leg steaks", "thinly sliced"], ["2 tbsp", "oil", "olive oil"], ["1", "lemon", "juiced"], ["2 tsp", "oregano"], ["1 tsp", "paprika"], ["1 tsp", "cumin"], ["3 cloves", "garlic", "crushed"], ["4", "pitta bread"], ["150g", "greek yoghurt"], ["½", "cucumber", "grated"], ["2", "tomatoes", "chopped"], ["½", "red onion", "sliced"], ["200g", "?potatoes", "as chips, Greek-style"]],
     steps: [
       "Marinate the lamb slices in the oil, lemon, oregano, paprika, cumin, most of the garlic and a pinch of salt for 30 minutes.",
@@ -161,7 +161,7 @@ RECIPES.push(
 
   // ───────────── BEEF ─────────────
   { id: "beef-burritos", name: "Beef Burritos", emoji: "🌯", cat: "beef", temp: 190, time: 8, prep: 20, serves: 4, turn: "flip",
-    tags: ["fakeaway", "mexican", "family", "batch cook"],
+    tags: ["wraps", "fakeaway", "mexican", "family", "batch cook"],
     ing: [["500g", "beef mince"], ["1", "onion", "chopped"], ["2 tbsp", "fajita seasoning"], ["2 tbsp", "tomato puree"], ["400g", "black beans", "drained"], ["250g", "rice", "cooked"], ["100g", "cheddar", "grated"], ["4", "tortilla wraps", "large"], ["4 tbsp", "salsa"], ["3 tbsp", "?sour cream"], ["1", "?avocado", "sliced"], ["spray", "oil"]],
     steps: [
       "Brown the mince and onion in a pan, add the fajita seasoning, tomato puree, beans and a splash of water and simmer for 10 minutes until thick and the mince reaches 75°C.",
@@ -179,7 +179,7 @@ RECIPES.push(
       "Cool for 5 minutes before eating – the filling is very hot."
     ] },
   { id: "birria-style-beef-tacos", name: "Birria-Style Beef Tacos", emoji: "🌮", cat: "beef", temp: 200, time: 8, prep: 30, serves: 4, turn: "flip",
-    tags: ["fakeaway", "trending", "mexican", "cheesy", "quick version"],
+    tags: ["wraps", "fakeaway", "trending", "mexican", "cheesy", "quick version"],
     ing: [["500g", "beef steak", "braising or rump, thinly sliced"], ["1", "onion", "half sliced, half finely chopped"], ["3 cloves", "garlic", "crushed"], ["2 tsp", "chilli powder", "ancho or chipotle if you have it"], ["1 tsp", "cumin"], ["1 tsp", "oregano"], ["½ tsp", "cinnamon"], ["2 tbsp", "tomato puree"], ["1", "stock cube", "beef"], ["400ml", "water"], ["8", "tortilla wraps", "small"], ["150g", "mozzarella", "grated"], ["handful", "fresh coriander"], ["1", "lime"]],
     steps: [
       "Brown the beef and sliced onion in a pan, add the garlic, spices and tomato puree for 1 minute, then the stock cube and water. Simmer covered for 25–30 minutes until tender, then shred the beef. Keep the broth (consommé).",
@@ -275,7 +275,7 @@ RECIPES.push(
 
   // ───────────── DUCK ─────────────
   { id: "crispy-duck-pancakes", name: "Crispy Duck Pancakes", emoji: "🦆", cat: "chicken", temp: 180, time: 40, prep: 10, serves: 4, turn: "flip",
-    tags: ["fakeaway", "chinese", "sharing", "duck"],
+    tags: ["wraps", "fakeaway", "chinese", "sharing", "duck"],
     ing: [["4", "duck legs"], ["2 tsp", "five spice"], ["1 tsp", "salt"], ["12", "tortilla wraps", "Chinese pancakes – small wraps work in a pinch"], ["6 tbsp", "hoisin sauce"], ["½", "cucumber", "matchsticks"], ["4", "spring onions", "shredded"]],
     steps: [
       "Prick the duck skin all over, pat dry and rub with the five spice and salt.",
