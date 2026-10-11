@@ -18,6 +18,7 @@ const CATEGORIES = [
   { id: 'desserts', label: 'Desserts', emoji: '🍫' },
   { id: 'wraps', label: 'Wraps', emoji: '🌯' },
   { id: 'pyrex', label: 'Pyrex Dish', emoji: '🥘' },
+  { id: 'pasta', label: 'Pasta', emoji: '🍝' },
   { id: 'breakfast', label: 'Breakfast', emoji: '🍳' },
   { id: 'frozen', label: 'From Frozen', emoji: '🧊' }
 ];

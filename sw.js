@@ -24,6 +24,8 @@ const ASSETS = [
   'js/recipes-desserts-2.js',
   'js/recipes-pyrex-3.js',
   'js/recipes-pyrex-4.js',
+  'js/recipes-honey.js',
+  'js/recipes-pasta.js',
   'js/kitchen.js',
   'js/timer.js',
   'js/app.js',

@@ -122,7 +122,7 @@ function searchRecipes(query, cat) {
   // Best matches first: whole phrase in the name, then every word in the name, then the rest.
   const rank = r => {
     const n = r.name.toLowerCase().replace(/[^a-z0-9& ]+/g, ' ').replace(/\s+/g, ' ').trim();
-    if (!q) return (cat === 'trending' && !VIRAL_IDS.has(r.id)) || (cat === 'wraps' && r.cat !== 'wraps') ? 1 : 0;
+    if (!q) return (cat === 'trending' && !VIRAL_IDS.has(r.id)) || (cat === 'wraps' && r.cat !== 'wraps') || (cat === 'pasta' && r.cat !== 'pasta') ? 1 : 0;
     if (n === q) return 0;
     if (n.startsWith(q)) return 1;
     if (n.includes(q)) return 2;
@@ -132,6 +132,7 @@ function searchRecipes(query, cat) {
   return RECIPES.filter(r => {
     if (cat === 'trending') { if (!r.tags.includes('trending')) return false; }
     else if (cat === 'wraps') { if (r.cat !== 'wraps' && !r.tags.includes('wraps')) return false; }
+    else if (cat === 'pasta') { if (r.cat !== 'pasta' && !r.ing.some(i => /^\??(pasta|gnocchi)$/.test(i[1]))) return false; }
     else if (cat !== 'all' && r.cat !== cat) return false;
     if (!tokens.length) return true;
     const hay = [r.name, r.cat, catOf(r.cat)?.label || '', ...r.tags, ...r.ing.map(i => i[1].replace('?', '') + ' ' + (i[2] || ''))].join(' | ').toLowerCase();
