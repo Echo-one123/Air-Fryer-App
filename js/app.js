@@ -120,7 +120,7 @@ const FILTERS = [
   { id: 'honey', label: 'Honey Roast', emoji: '🍯', test: r => r.tags.includes('honey roast') || /honey/i.test(r.name), first: r => r.tags.includes('honey roast') },
   { id: 'quick', label: 'Quick (20 min)', emoji: '⚡', test: r => r.time + (r.prep || 0) <= 20 },
   { id: 'healthy', label: 'Healthy', emoji: '🥗', test: r => hasTag(r, 'healthy', 'low-carb', 'high-protein', 'light', 'low-calorie', 'meal prep', 'slimming') },
-  { id: 'veggie', label: 'Vegetarian', emoji: '🌱', test: isVeggie },
+  { id: 'vegetarian', label: 'Vegetarian', emoji: '🌱', test: isVeggie },
   { id: 'vegan', label: 'Vegan', emoji: '🌿', test: r => r.tags.includes('vegan') },
   { id: 'kids', label: 'Kids', emoji: '🧒', test: r => hasTag(r, 'kids', 'lunchbox') },
   { id: 'budget', label: 'Budget', emoji: '💷', test: r => hasTag(r, 'budget', 'leftovers', 'cheap') }
