@@ -1,6 +1,6 @@
 /* Service worker: caches the whole app so it works offline.
  * Bump VERSION whenever you change any file so phones pick up the update. */
-const VERSION = 'v7';
+const VERSION = 'v8';
 const CACHE = `air-fryer-${VERSION}`;
 const ASSETS = [
   './',

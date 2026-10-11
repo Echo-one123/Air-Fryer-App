@@ -18,6 +18,10 @@ const state = {
   flavour: Store.get('af.flavour', 'auto'),
   theme: Store.get('af.theme', 'auto'),
   cat: 'all',
+  filter: 'all',
+  browse: true,
+  sort: Store.get('af.sort', 'best'),
+  recent: Store.get('af.recent', []),       // recently viewed recipe ids
   limit: 40,
   query: '',
   ticks: Store.get('af.ticks', {}),          // ticked-off steps per recipe
@@ -108,51 +112,43 @@ function recipeCard(r, { missing = null, showHave = true } = {}) {
     </a>`;
 }
 
-/* ───────────────────────── SEARCH ───────────────────────── */
-/* Smart filters shown in the first chip row (categories are the second row). */
+/* ───────────────────────── SEARCH & BROWSE ───────────────────────── */
+/* Quick picks / filters. They can be combined with a category (e.g. Chicken + Quick). */
 const hasTag = (r, ...tags) => r.tags.some(t => tags.includes(t));
 const MEATY = new Set(['meat', 'fish']);
 const isVeggie = r => !r.ing.some(i => MEATY.has(Ingredients.type(i[1].replace(/^\?/, '')))) &&
   (r.cat === 'veggie' || hasTag(r, 'vegetarian', 'vegan') || ['desserts', 'sides', 'snacks', 'breakfast', 'pasta', 'pyrex', 'wraps'].includes(r.cat));
 const FILTERS = [
-  { id: 'all', label: 'All', emoji: '🍽️', test: () => true },
+  { id: 'all', label: 'Any', emoji: '✨', test: () => true },
   { id: 'trending', label: 'Trending', emoji: '🔥', test: r => r.tags.includes('trending'), first: r => VIRAL_IDS.has(r.id) },
-  { id: 'honey', label: 'Honey Roast', emoji: '🍯', test: r => r.tags.includes('honey roast') || /honey/i.test(r.name), first: r => r.tags.includes('honey roast') },
-  { id: 'quick', label: 'Quick (20 min)', emoji: '⚡', test: r => r.time + (r.prep || 0) <= 20 },
+  { id: 'quick', label: 'Under 30 min', emoji: '⚡', test: r => r.time + (r.prep || 0) <= 30 },
   { id: 'healthy', label: 'Healthy', emoji: '🥗', test: r => hasTag(r, 'healthy', 'low-carb', 'high-protein', 'light', 'low-calorie', 'meal prep', 'slimming') },
   { id: 'vegetarian', label: 'Vegetarian', emoji: '🌱', test: isVeggie },
   { id: 'vegan', label: 'Vegan', emoji: '🌿', test: r => r.tags.includes('vegan') },
   { id: 'kids', label: 'Kids', emoji: '🧒', test: r => hasTag(r, 'kids', 'lunchbox') },
-  { id: 'budget', label: 'Budget', emoji: '💷', test: r => hasTag(r, 'budget', 'leftovers', 'cheap') }
+  { id: 'budget', label: 'Budget', emoji: '💷', test: r => hasTag(r, 'budget', 'leftovers', 'cheap') },
+  { id: 'honey', label: 'Honey Roast', emoji: '🍯', test: r => r.tags.includes('honey roast') || /honey/i.test(r.name), first: r => r.tags.includes('honey roast') }
 ];
+const filterOf = id => FILTERS.find(f => f.id === id) || FILTERS[0];
 // Categories that also collect matching recipes from other categories.
 const CAT_EXTRA = {
   wraps: r => r.tags.includes('wraps'),
   pasta: r => r.ing.some(i => /^\??(pasta|gnocchi)$/.test(i[1]))
 };
+const inCategory = (r, cat) => cat === 'all' || r.cat === cat || (CAT_EXTRA[cat] ? CAT_EXTRA[cat](r) : false);
+const catCount = {};
+const countFor = cat => (catCount[cat] ??= RECIPES.filter(r => inCategory(r, cat)).length);
 
-function renderCatChips() {
-  const chip = c => `<button class="chip ${state.cat === c.id ? 'active' : ''}" data-cat="${c.id}" aria-pressed="${state.cat === c.id}">${c.emoji} ${c.label}</button>`;
-  $('#filterChips').innerHTML = FILTERS.map(chip).join('');
-  $('#catChips').innerHTML = CATEGORIES.map(chip).join('');
-}
-
-function inCategory(r, cat) {
-  const f = FILTERS.find(x => x.id === cat);
-  if (f) return f.test(r);
-  return r.cat === cat || (CAT_EXTRA[cat] ? CAT_EXTRA[cat](r) : false);
-}
-
-function searchRecipes(query, cat) {
+function searchRecipes(query, cat, filter = 'all', sort = 'best') {
   const q = Ingredients.clean(query).replace(/\band\b/g, '&');
   const tokens = q.split(' ').filter(t => t && t !== '&');
   const whole = q ? Ingredients.resolveExact(q) : null;
+  const f = filterOf(filter);
   // Best matches first: whole phrase in the name, then every word in the name, then the rest.
   const rank = r => {
     const n = r.name.toLowerCase().replace(/[^a-z0-9& ]+/g, ' ').replace(/\s+/g, ' ').trim();
     if (!q) {
-      const f = FILTERS.find(x => x.id === cat);
-      if (f && f.first) return f.first(r) ? 0 : 1;
+      if (f.first) return f.first(r) ? 0 : 1;
       return CAT_EXTRA[cat] && r.cat !== cat ? 1 : 0;
     }
     if (n === q) return 0;
@@ -161,8 +157,8 @@ function searchRecipes(query, cat) {
     if (tokens.every(t => n.includes(t))) return 3;
     return 4;
   };
-  return RECIPES.filter(r => {
-    if (!inCategory(r, cat)) return false;
+  const found = RECIPES.filter(r => {
+    if (!inCategory(r, cat) || !f.test(r)) return false;
     if (!tokens.length) return true;
     const hay = [r.name, r.cat, catOf(r.cat)?.label || '', ...r.tags, ...r.ing.map(i => i[1].replace('?', '') + ' ' + (i[2] || ''))].join(' | ').toLowerCase();
     const stemHay = Ingredients.stem(hay);
@@ -172,49 +168,132 @@ function searchRecipes(query, cat) {
       const syn = Ingredients.resolve(t);
       return !!syn && hay.includes(syn);
     });
-  }).map((r, i) => [rank(r), i, r]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
+  });
+  const key = sort === 'quick' ? r => [r.time + (r.prep || 0), 0]
+    : sort === 'az' ? r => [0, 0]
+    : r => [rank(r), 0];
+  return found.map((r, i) => [key(r)[0], i, r])
+    .sort((a, b) => a[0] - b[0] || (sort === 'az' ? a[2].name.localeCompare(b[2].name) : a[1] - b[1]))
+    .map(x => x[2]);
 }
 
-function renderSearch() {
-  renderCatChips();
-  const results = searchRecipes(state.query, state.cat);
-  $('#searchClear').hidden = !state.query;
-  const tip = CATEGORY_TIPS[state.cat];
+/* Where the Search tab is: #search (browse home), #search/all, #search/c/chicken, #search/f/quick, #search/c/chicken/f/quick */
+function searchHash(cat, filter) {
+  if (cat === 'all' && filter === 'all') return '#search/all';
+  return '#search' + (cat !== 'all' ? `/c/${cat}` : '') + (filter !== 'all' ? `/f/${filter}` : '');
+}
+function parseSearchHash(parts) {
+  const out = { cat: 'all', filter: 'all', browse: parts.length === 0 };
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i] === 'c' && parts[i + 1]) out.cat = catOf(parts[++i]) ? parts[i] : 'all';
+    else if (parts[i] === 'f' && parts[i + 1]) out.filter = filterOf(parts[++i]).id;
+  }
+  return out;
+}
+/** Change category/filter without adding a new history entry (used by the dropdown and chips). */
+function setSearch(cat, filter) {
+  state.cat = cat;
+  state.filter = filter;
+  state.browse = false;
+  state.limit = PAGE;
+  history.replaceState(null, '', searchHash(cat, filter));
+  renderSearch();
+}
+
+const PAGE = 40;
+const showingResults = () => !state.browse || !!state.query.trim();
+
+function miniCard(r) {
+  return `<a class="mini-card" href="#recipe/${esc(r.id)}">
+    <span class="mc-emoji" aria-hidden="true">${r.emoji}</span>
+    <span class="mc-name">${esc(r.name)}</span>
+    <span class="mc-meta">⏱️ ${r.time} min · ${r.temp}°C</span>
+  </a>`;
+}
+
+function renderBrowse() {
+  $('#pickGrid').innerHTML = FILTERS.filter(f => f.id !== 'all').map(f =>
+    `<a class="pick" href="#search/f/${f.id}"><span aria-hidden="true">${f.emoji}</span> ${esc(f.label)}</a>`).join('');
+  $('#catGrid').innerHTML = CATEGORIES.map(c =>
+    `<a class="cat-tile" href="#search/c/${c.id}">
+      <span class="ct-emoji" aria-hidden="true">${c.emoji}</span>
+      <span class="ct-label">${esc(c.label)}</span>
+      <span class="ct-count">${countFor(c.id)} recipes</span>
+    </a>`).join('');
+  $('#trendRow').innerHTML = searchRecipes('', 'all', 'trending').slice(0, 12).map(miniCard).join('');
+  const recent = state.recent.map(getRecipe).filter(Boolean);
+  $('#recentSec').hidden = !recent.length;
+  $('#recentRow').innerHTML = recent.map(miniCard).join('');
+  $('#allBtn').textContent = `🍽️ Browse all ${RECIPES.length.toLocaleString('en-GB')} recipes`;
+}
+
+function renderResults() {
+  const { cat, filter, query } = state;
+  const results = searchRecipes(query, cat, filter, state.sort);
+  const c = catOf(cat), f = filterOf(filter);
+  const bits = [];
+  if (c) bits.push(`${c.emoji} ${c.label}`);
+  if (filter !== 'all') bits.push(`${f.emoji} ${f.label}`);
+  $('#resultsTitle').textContent = query.trim()
+    ? `Results for “${query.trim()}”` + (bits.length ? ` in ${bits.join(' · ')}` : '')
+    : (bits.length ? bits.join(' · ') : '🍽️ All recipes');
+  $('#catSelect').innerHTML = `<option value="all">All categories (${RECIPES.length})</option>` +
+    CATEGORIES.map(x => `<option value="${x.id}" ${x.id === cat ? 'selected' : ''}>${x.emoji} ${esc(x.label)} (${countFor(x.id)})</option>`).join('');
+  $('#sortSelect').value = state.sort;
+  $('#filterChips').innerHTML = FILTERS.map(x =>
+    `<button class="chip ${filter === x.id ? 'active' : ''}" data-filter="${x.id}" aria-pressed="${filter === x.id}">${x.emoji} ${esc(x.label)}</button>`).join('');
+  const tip = CATEGORY_TIPS[cat];
   $('#catTip').innerHTML = tip
-    ? `<details class="cat-tip" ${Store.get('af.tipSeen.' + state.cat, false) ? '' : 'open'}><summary>${esc(tip.title)}</summary><ul>${tip.tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>`
+    ? `<details class="cat-tip" ${Store.get('af.tipSeen.' + cat, false) ? '' : 'open'}><summary>${esc(tip.title)}</summary><ul>${tip.tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>`
     : '';
   // Show the tips open the first time only; after that they start collapsed (tap to open).
-  if (tip) Store.set('af.tipSeen.' + state.cat, true);
+  if (tip) Store.set('af.tipSeen.' + cat, true);
   $('#resultCount').textContent = `${results.length} recipe${results.length === 1 ? '' : 's'}`;
   // Show results in pages so a big library stays quick on phones.
   const shown = results.slice(0, state.limit);
   const left = results.length - shown.length;
+  const canWiden = cat !== 'all' || filter !== 'all';
   $('#searchResults').innerHTML = results.length
     ? shown.map(r => recipeCard(r)).join('') +
       (left > 0 ? `<button class="btn big show-more" id="showMore">Show more (${left} more)</button>` : '')
-    : `<div class="empty"><div class="empty-emoji">🤔</div><h2>No recipes found</h2><p>Try another word, or clear the filter.</p></div>`;
+    : `<div class="empty"><div class="empty-emoji">🤔</div><h2>No recipes found</h2>
+        <p>Try another word${canWiden ? ', or search everything' : ''}.</p>
+        ${canWiden ? '<button class="btn primary" id="widenSearch">Search all recipes</button>' : ''}</div>`;
 }
 
-const PAGE = 40;
+function renderSearch() {
+  $('#searchClear').hidden = !state.query;
+  const results = showingResults();
+  $('#browseView').hidden = results;
+  $('#resultsView').hidden = !results;
+  if (results) renderResults(); else renderBrowse();
+}
+
 $('#searchResults').addEventListener('click', e => {
+  if (e.target.closest('#widenSearch')) return setSearch('all', 'all');
   if (!e.target.closest('#showMore')) return;
   state.limit += PAGE;
   const y = window.scrollY;
   renderSearch();
   window.scrollTo(0, y);
 });
-
 $('#searchInput').addEventListener('input', e => { state.query = e.target.value; state.limit = PAGE; renderSearch(); });
 $('#searchClear').addEventListener('click', () => { state.query = ''; $('#searchInput').value = ''; renderSearch(); $('#searchInput').focus(); });
-const onChip = e => {
-  const b = e.target.closest('[data-cat]');
-  if (!b) return;
-  state.cat = b.dataset.cat;
-  state.limit = PAGE;
-  renderSearch();
-};
-$('#filterChips').addEventListener('click', onChip);
-$('#catChips').addEventListener('click', onChip);
+$('#filterChips').addEventListener('click', e => {
+  const b = e.target.closest('[data-filter]');
+  if (b) setSearch(state.cat, b.dataset.filter);
+});
+$('#catSelect').addEventListener('change', e => setSearch(e.target.value, state.filter));
+$('#sortSelect').addEventListener('change', e => { state.sort = e.target.value; Store.set('af.sort', state.sort); state.limit = PAGE; renderSearch(); });
+$('#resultsBack').addEventListener('click', e => {
+  // "Browse" also clears any search text.
+  e.preventDefault();
+  state.query = '';
+  $('#searchInput').value = '';
+  if (location.hash === '#search' || location.hash === '') { state.browse = true; renderSearch(); window.scrollTo(0, 0); }
+  else location.hash = '#search';
+});
+$('#clearRecent').addEventListener('click', () => { state.recent = []; Store.set('af.recent', []); renderSearch(); });
 
 /* ───────────────────────── MY KITCHEN ───────────────────────── */
 function addIngredient(text, { quiet = false } = {}) {
@@ -545,6 +624,8 @@ function renderRecipe(id) {
     view.innerHTML = `<div class="empty"><div class="empty-emoji">🍳</div><h2>Recipe not found</h2><p><a href="#search">Back to recipes</a></p></div>`;
     return;
   }
+  state.recent = [r.id, ...state.recent.filter(x => x !== r.id)].slice(0, 12);
+  Store.set('af.recent', state.recent);
   const c = catOf(r.cat);
   const st = ingredientStatus(r);
   const ticks = state.ticks[r.id] || [];
@@ -642,9 +723,8 @@ $('#view-recipe').addEventListener('click', e => {
   } else if (tag) {
     e.preventDefault();
     state.query = tag.dataset.tag;
-    state.cat = 'all';
     $('#searchInput').value = state.query;
-    location.hash = '#search';
+    location.hash = '#search/all';
   } else {
     handleTimerClick(e);
   }
@@ -769,8 +849,16 @@ function route() {
   const [view, ...rest] = hash.split('/');
   const name = ['search', 'kitchen', 'saved', 'recipe'].includes(view) ? view : 'search';
 
-  if (state.view !== 'recipe') state.scroll[state.view] = window.scrollY;
+  // Remember the scroll position of each screen (each category page has its own).
+  const key = name === 'recipe' ? null : (location.hash || '#search');
+  if (state.scrollKey) state.scroll[state.scrollKey] = window.scrollY;
+  state.scrollKey = key;
   state.view = name;
+  if (name === 'search') {
+    const s = parseSearchHash(rest);
+    if (s.cat !== state.cat || s.filter !== state.filter) state.limit = PAGE;
+    Object.assign(state, s);
+  }
 
   document.querySelectorAll('.view').forEach(v => { v.hidden = v.id !== `view-${name}`; });
   document.querySelectorAll('.tab').forEach(t => {
@@ -778,8 +866,8 @@ function route() {
     t.classList.toggle('active', active);
     if (active) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
   });
-  $('#backBtn').hidden = name !== 'recipe';
   $('#pageTitle').textContent = TITLES[name];
+  $('#backBtn').hidden = name !== 'recipe';
   document.body.classList.toggle('on-recipe', name === 'recipe');
 
   if (name === 'search') renderSearch();
@@ -789,7 +877,7 @@ function route() {
     renderRecipe(decodeURIComponent(rest.join('/')));
     window.scrollTo(0, 0);
   } else {
-    window.scrollTo(0, state.scroll[name] || 0);
+    window.scrollTo(0, state.scroll[key] || 0);
   }
   updateMiniTimer(CookTimer.snapshot());
 }
