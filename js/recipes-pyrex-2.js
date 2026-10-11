@@ -92,7 +92,7 @@ RECIPES.push(
   {
     id: "pyrex-pigs-in-blankets-stuffing-bake", name: "Pigs in Blankets Stuffing Bake", emoji: "🐷", cat: "pyrex",
     temp: 180, time: 30, prep: 15, serves: 6, turn: "none",
-    tags: ["pyrex", "side", "sunday roast", "christmas", "trending"],
+    tags: ["pyrex", "side", "sunday roast", "christmas"],
     ing: [["400g", "sausages", "skins removed, for the stuffing"], ["120g", "breadcrumbs"], ["1", "onion", "finely chopped"], ["1 tsp", "thyme", "or dried sage"], ["1", "eggs"], ["12", "cocktail sausages"], ["6 rashers", "bacon", "streaky, halved"], ["1 tbsp", "?cranberry sauce"], ["½ tsp", "salt"], ["pinch", "black pepper"]],
     steps: [
       "Use a 20cm square or 1.5-litre oven-safe Pyrex dish that leaves a 1–2cm gap around it in your basket. Grease it lightly.",
@@ -277,7 +277,7 @@ RECIPES.push(
   {
     id: "pyrex-gooey-brownie-pudding", name: "Gooey Chocolate Brownie Pudding", emoji: "🍫", cat: "pyrex",
     temp: 160, time: 25, prep: 10, serves: 6, turn: "none",
-    tags: ["pyrex", "dessert", "vegetarian", "trending"],
+    tags: ["pyrex", "dessert", "vegetarian"],
     ing: [["150g", "dark chocolate", "broken up"], ["125g", "butter"], ["200g", "brown sugar"], ["3", "eggs"], ["60g", "plain flour"], ["30g", "cocoa powder"], ["1 tsp", "vanilla extract"], ["pinch", "salt"], ["to serve", "?ice cream"]],
     steps: [
       "Use a 20cm square or 1.5-litre oven-safe Pyrex dish that leaves a 1–2cm gap around it in your basket. Butter it well.",
