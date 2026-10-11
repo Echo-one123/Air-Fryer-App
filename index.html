@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Air Fryer Kitchen</title>
+  <meta name="description" content="Air fryer recipes, a what's-in-my-fridge recipe writer and a cooking timer. Works offline.">
+  <meta name="theme-color" content="#f26b21" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- iPhone home screen support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Air Fryer">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn back-btn" id="backBtn" aria-label="Back" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <h1 id="pageTitle">Air Fryer Kitchen</h1>
+    <button class="icon-btn" id="themeBtn" aria-label="Change theme" title="Theme: follows your phone">
+      <span id="themeIcon" aria-hidden="true">🌗</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <!-- SEARCH -->
+    <section class="view" id="view-search" aria-label="Search recipes">
+      <div class="search-wrap">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <input id="searchInput" type="search" placeholder="Search recipes, ingredients, tags…" autocomplete="off" enterkeyhint="search" aria-label="Search recipes">
+          <button class="clear-btn" id="searchClear" aria-label="Clear search" hidden>✕</button>
+        </label>
+      </div>
+      <div class="chip-row" id="catChips" role="toolbar" aria-label="Filter by category"></div>
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="card-list" id="searchResults"></div>
+    </section>
+
+    <!-- MY KITCHEN -->
+    <section class="view" id="view-kitchen" aria-label="My kitchen" hidden>
+      <div class="panel">
+        <h2 class="panel-title">What have you got?</h2>
+        <p class="hint">Type meats, veg, sauces and spices. Try “steak”, “mince”, “chips” or “shrimp”.</p>
+        <form class="add-row" id="addForm" autocomplete="off">
+          <div class="ac-wrap">
+            <input id="ingInput" type="text" placeholder="e.g. chicken thighs" aria-label="Add an ingredient" enterkeyhint="done"
+                   role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="acList">
+            <ul class="ac-list" id="acList" role="listbox" hidden></ul>
+          </div>
+          <button class="btn primary" type="submit">Add</button>
+        </form>
+        <p class="add-feedback" id="addFeedback" aria-live="polite"></p>
+
+        <div id="pantryWrap">
+          <div class="pantry-head">
+            <h3>In my kitchen <span class="count" id="pantryCount"></span></h3>
+            <button class="link-btn" id="clearPantry">Clear all</button>
+          </div>
+          <div id="pantryList"></div>
+        </div>
+
+        <details class="quick" id="quickAdd">
+          <summary>Quick add</summary>
+          <div id="quickList"></div>
+        </details>
+      </div>
+
+      <div id="ideaWrap"></div>
+
+      <div class="panel" id="canMakeWrap">
+        <h2 class="panel-title">Recipes you can make</h2>
+        <p class="hint" id="canMakeHint">Add a few ingredients and I'll rank the recipes you're closest to making.</p>
+        <div class="card-list compact" id="canMakeList"></div>
+      </div>
+    </section>
+
+    <!-- SAVED -->
+    <section class="view" id="view-saved" aria-label="Saved recipes" hidden>
+      <div class="card-list" id="savedList"></div>
+      <div class="empty" id="savedEmpty" hidden>
+        <div class="empty-emoji">🤍</div>
+        <h2>No saved recipes yet</h2>
+        <p>Tap the heart on any recipe to save it here.</p>
+      </div>
+    </section>
+
+    <!-- RECIPE -->
+    <section class="view" id="view-recipe" aria-label="Recipe" hidden></section>
+  </main>
+
+  <!-- Floating timer (shows when a timer is running and you're not on its recipe) -->
+  <button class="mini-timer" id="miniTimer" hidden aria-label="Open running timer">
+    <span class="mini-dot"></span><span id="miniTimerText">00:00</span>
+  </button>
+
+  <!-- Alert banner for timer events -->
+  <div class="alert" id="alertBox" role="alert" hidden>
+    <div class="alert-emoji" id="alertEmoji">⏰</div>
+    <div class="alert-body">
+      <strong id="alertTitle">Time's up!</strong>
+      <span id="alertMsg"></span>
+    </div>
+    <button class="btn primary" id="alertOk">OK</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <nav class="tabbar" aria-label="Main">
+    <a href="#search" class="tab" data-tab="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Search</span>
+    </a>
+    <a href="#kitchen" class="tab" data-tab="kitchen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2.5 12.5H5M19 12.5h2.5M4 8.5h16M10 6h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>My Kitchen</span>
+    </a>
+    <a href="#saved" class="tab" data-tab="saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Saved</span>
+    </a>
+  </nav>
+
+  <script src="js/ingredients.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/kitchen.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
