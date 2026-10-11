@@ -405,3 +405,5 @@ button.ing-row { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.hot { font-size: .9em; }

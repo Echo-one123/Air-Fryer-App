@@ -15,7 +15,9 @@ const CATEGORIES = [
   { id: 'veggie', label: 'Veggie', emoji: '🥦' },
   { id: 'sides', label: 'Sides', emoji: '🍟' },
   { id: 'snacks', label: 'Snacks', emoji: '🧀' },
-  { id: 'desserts', label: 'Desserts', emoji: '🍫' }
+  { id: 'desserts', label: 'Desserts', emoji: '🍫' },
+  { id: 'breakfast', label: 'Breakfast', emoji: '🍳' },
+  { id: 'frozen', label: 'From Frozen', emoji: '🧊' }
 ];
 
 const RECIPES = [
@@ -384,7 +386,7 @@ const RECIPES = [
   {
     id: 'halloumi-fries', name: 'Halloumi Fries', emoji: '🧀', cat: 'veggie',
     temp: 200, time: 8, prep: 5, serves: 2, turn: 'flip',
-    tags: ['vegetarian', 'snack', 'quick', 'party'],
+    tags: ['trending', 'vegetarian', 'snack', 'quick', 'party'],
     ing: [['225g block', 'halloumi', 'cut into 1cm fingers'], ['1 tbsp', 'cornflour'], ['½ tsp', 'paprika'], ['spray', 'oil'], ['1 tbsp', '?honey'], ['pinch', '?chilli flakes']],
     steps: [
       'Pat the halloumi dry, then toss in the cornflour and paprika.',
@@ -434,7 +436,7 @@ const RECIPES = [
   {
     id: 'buffalo-cauliflower', name: 'Buffalo Cauliflower Bites', emoji: '🥦', cat: 'veggie',
     temp: 200, time: 15, prep: 10, serves: 2, turn: 'shake',
-    tags: ['vegetarian', 'spicy', 'party', 'fakeaway'],
+    tags: ['trending', 'vegetarian', 'spicy', 'party', 'fakeaway'],
     ing: [['1 head', 'cauliflower', 'cut into florets'], ['60g', 'plain flour'], ['80ml', 'milk'], ['1 tsp', 'garlic granules'], ['1 tsp', 'paprika'], ['½ tsp', 'salt'], ['3 tbsp', 'hot sauce'], ['20g', 'butter'], ['spray', 'oil'], ['4 tbsp', '?greek yoghurt', 'for dipping']],
     steps: [
       'Whisk the flour, milk, garlic granules, paprika and salt into a thick batter.',
@@ -585,7 +587,7 @@ const RECIPES = [
   {
     id: 'crispy-chickpeas', name: 'Smoky Crispy Chickpeas', emoji: '🫘', cat: 'snacks',
     temp: 200, time: 14, prep: 5, serves: 2, turn: 'shake',
-    tags: ['vegan', 'healthy', 'gluten-free', 'budget'],
+    tags: ['trending', 'vegan', 'healthy', 'gluten-free', 'budget'],
     ing: [['400g tin', 'chickpeas'], ['1 tbsp', 'oil'], ['1 tsp', 'paprika', 'smoked'], ['½ tsp', 'cumin'], ['½ tsp', '?garlic granules'], ['½ tsp', 'salt']],
     steps: [
       'Drain, rinse and dry the chickpeas really well, rubbing off any loose skins.',

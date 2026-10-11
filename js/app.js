@@ -36,7 +36,7 @@ const fmt = secs => { const m = Math.floor(secs / 60), s = secs % 60; return `${
 const catOf = id => CATEGORIES.find(c => c.id === id);
 const pantrySet = () => new Set(state.pantry);
 const isSaved = id => state.saved.includes(id);
-const GROUP_EMOJI = { meat: '🥩', veg: '🥕', sauce: '🥫', spice: '🌿', dairy: '🧀', cupboard: '🥖', other: '🛒' };
+const GROUP_EMOJI = { meat: '🥩', veg: '🥕', sauce: '🥫', spice: '🌿', dairy: '🧀', cupboard: '🥖', freezer: '🧊', other: '🛒' };
 
 function getRecipe(id) {
   return RECIPES.find(r => r.id === id) || state.custom[id] || (state.idea && state.idea.id === id ? state.idea : null);
@@ -99,17 +99,17 @@ function recipeCard(r, { missing = null, showHave = true } = {}) {
     <a class="card" href="#recipe/${esc(r.id)}">
       <div class="card-emoji" aria-hidden="true">${r.emoji}</div>
       <div class="card-body">
-        <h3>${esc(r.name)}${isSaved(r.id) ? ' <span class="saved-dot" aria-label="Saved">♥</span>' : ''}</h3>
+        <h3>${r.tags.includes('trending') ? '<span class="hot" title="Trending">🔥</span> ' : ''}${esc(r.name)}${isSaved(r.id) ? ' <span class="saved-dot" aria-label="Saved">♥</span>' : ''}</h3>
         <p class="meta">${c ? `${c.label} · ` : ''}${r.temp}°C · ${r.time} min · Serves ${r.serves}</p>
         ${extra}
-        <div class="tags">${r.tags.slice(0, 3).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+        <div class="tags">${r.tags.filter(t => t !== 'trending').slice(0, 3).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
       </div>
     </a>`;
 }
 
 /* ───────────────────────── SEARCH ───────────────────────── */
 function renderCatChips() {
-  const chips = [{ id: 'all', label: 'All', emoji: '🍽️' }, ...CATEGORIES];
+  const chips = [{ id: 'all', label: 'All', emoji: '🍽️' }, { id: 'trending', label: 'Trending', emoji: '🔥' }, ...CATEGORIES];
   $('#catChips').innerHTML = chips.map(c =>
     `<button class="chip ${state.cat === c.id ? 'active' : ''}" data-cat="${c.id}" aria-pressed="${state.cat === c.id}">${c.emoji} ${c.label}</button>`
   ).join('');
@@ -120,7 +120,8 @@ function searchRecipes(query, cat) {
   const tokens = q.split(' ').filter(Boolean);
   const whole = q ? Ingredients.resolve(q) : null;
   return RECIPES.filter(r => {
-    if (cat !== 'all' && r.cat !== cat) return false;
+    if (cat === 'trending') { if (!r.tags.includes('trending')) return false; }
+    else if (cat !== 'all' && r.cat !== cat) return false;
     if (!tokens.length) return true;
     const hay = [r.name, r.cat, catOf(r.cat)?.label || '', ...r.tags, ...r.ing.map(i => i[1].replace('?', '') + ' ' + (i[2] || ''))].join(' | ').toLowerCase();
     const stemHay = Ingredients.stem(hay);
