@@ -190,24 +190,6 @@ RECIPES.push(
       "Pepperoni is cured, so you're just crisping it – serve once sizzling and piping hot. Drain on kitchen paper; they crisp as they cool.",
       "Serve with cream cheese mixed with hot sauce, or crumble over salads."
     ] },
-  { id: "snack2-cheese-scone-bites", name: "Cheese & Spring Onion Scone Bites", emoji: "🧀", cat: "snacks", temp: 170, time: 12, prep: 15, serves: 6, turn: "none",
-    tags: ["vegetarian", "british", "lunchbox", "budget"],
-    ing: [["225g", "self-raising flour"], ["50g", "butter", "cold, cubed"], ["80g", "cheddar", "grated"], ["2", "spring onions", "finely sliced"], ["½ tsp", "mustard"], ["120ml", "milk", "plus extra to brush"], ["pinch", "salt"]],
-    steps: [
-      "Rub the butter into the flour and salt until it looks like breadcrumbs. Stir in most of the cheddar and the spring onions.",
-      "Mix the mustard into the milk, add to the bowl and bring together into a soft dough. Pat out 2cm thick and cut into 4cm rounds.",
-      "Brush with milk and top with the remaining cheese. Air fry on pierced baking paper at 170°C for 10–12 minutes until risen and golden. Cook in batches.",
-      "Cool slightly and serve warm with butter."
-    ] },
-  { id: "snack2-brie-cranberry-bites", name: "Brie & Cranberry Puff Bites", emoji: "🎄", cat: "snacks", temp: 180, time: 10, prep: 10, serves: 6, turn: "none",
-    tags: ["vegetarian", "christmas", "quick"],
-    ing: [["320g", "puff pastry", "ready-rolled sheet"], ["150g", "brie", "cut into 24 small chunks"], ["4 tbsp", "cranberry sauce"], ["1", "eggs", "beaten"], ["½ tsp", "?thyme"]],
-    steps: [
-      "Cut the pastry into 24 squares and score a 1cm border on each.",
-      "Brush the borders with egg. Put a chunk of brie and a little cranberry sauce in the middle of each.",
-      "Air fry on pierced baking paper at 180°C for 9–10 minutes until puffed and golden. Cook in batches, don't overcrowd.",
-      "Sprinkle with thyme and cool for 3 minutes before serving."
-    ] },
   { id: "snack2-toasted-ravioli", name: "Crispy Toasted Ravioli", emoji: "🥟", cat: "snacks", temp: 200, time: 8, prep: 15, serves: 4, turn: "flip",
     tags: ["vegetarian", "family", "kids", "quick"],
     ing: [["300g", "pasta", "fresh cheese-filled ravioli"], ["1", "eggs", "beaten"], ["80g", "breadcrumbs"], ["20g", "parmesan", "grated"], ["1 tsp", "mixed herbs"], ["spray", "oil"], ["200g", "passata", "warmed, for dipping"]],
@@ -216,24 +198,6 @@ RECIPES.push(
       "Dip each ravioli in egg, then coat in the crumbs. No need to cook the fresh pasta first.",
       "Spray with oil and air fry at 200°C for 7–8 minutes in a single layer, don't overcrowd. Flip halfway.",
       "Check the filling is piping hot (75°C) and serve with warm passata for dipping."
-    ] },
-  { id: "snack2-mini-corn-dogs", name: "Mini Corn Dog Bites", emoji: "🌭", cat: "snacks", temp: 180, time: 12, prep: 20, serves: 4, turn: "flip",
-    tags: ["kids", "family", "fakeaway", "american"],
-    ing: [["6", "hot dogs", "cut into 3"], ["100g", "polenta"], ["100g", "self-raising flour"], ["1 tbsp", "sugar"], ["1", "eggs"], ["90ml", "milk"], ["½ tsp", "salt"], ["spray", "oil"], ["2 tbsp", "?tomato ketchup"], ["2 tbsp", "?mustard"]],
-    steps: [
-      "Mix the polenta, flour, sugar, salt, egg and milk into a thick, soft dough (thick enough to hold its shape – add a little flour if sticky).",
-      "Pat the hot dog pieces dry. Wrap each in a thin layer of dough, sealing well. Chill for 10 minutes.",
-      "Spray with oil and air fry on pierced baking paper at 180°C for 10–12 minutes until golden. Flip halfway.",
-      "Check the sausage in the middle is piping hot (75°C). Serve with ketchup and mustard."
-    ] },
-  { id: "snack2-crispy-polenta-bites", name: "Crispy Polenta Bites", emoji: "🌽", cat: "snacks", temp: 200, time: 16, prep: 20, serves: 4, turn: "shake",
-    tags: ["vegetarian", "gluten-free", "budget"],
-    ing: [["150g", "polenta", "quick-cook"], ["600ml", "stock cube", "made up as veg stock"], ["30g", "parmesan", "grated (use a veggie hard cheese if needed)"], ["1 tsp", "rosemary", "finely chopped"], ["1 tbsp", "oil"], ["½ tsp", "salt"]],
-    steps: [
-      "Bring the stock to the boil on the hob, whisk in the polenta and cook for 3–5 minutes, stirring, until very thick. Stir in the parmesan and rosemary.",
-      "Spread 2cm thick in an oiled tin and chill for at least 1 hour (or overnight) until set. Cut into chunky bites.",
-      "Toss in oil and salt and air fry at 200°C for 14–16 minutes in a single layer, don't overcrowd. Shake gently halfway.",
-      "Serve hot with garlic mayo or warm passata."
     ] },
   { id: "snack2-chilli-salt-edamame", name: "Chilli Salt Edamame", emoji: "🫛", cat: "snacks", temp: 190, time: 8, prep: 2, serves: 3, turn: "shake",
     tags: ["vegan", "vegetarian", "healthy", "quick", "high-protein"],
@@ -270,5 +234,23 @@ RECIPES.push(
       "Check the centre: 52°C rare, 57°C medium-rare or 63°C medium. Rest for 5 minutes, then slice thinly.",
       "Heat the mini Yorkshires at 200°C for 2–3 minutes until crisp.",
       "Mix the horseradish and creme fraiche. Fill each Yorkshire with a little beef and a dollop of horseradish cream, then sprinkle with parsley."
+    ] },
+  { id: "snack2-chorizo-pitta-pizzas", name: "Chorizo Pitta Pizzas", emoji: "🍕", cat: "snacks", temp: 190, time: 6, prep: 5, serves: 2, turn: "none",
+    tags: ["quick", "budget", "kids", "lunchbox"],
+    ing: [["4", "pitta bread"], ["6 tbsp", "passata"], ["½ tsp", "oregano"], ["100g", "mozzarella", "grated"], ["50g", "chorizo", "thinly sliced"], ["4", "?cherry tomatoes", "halved"]],
+    steps: [
+      "Spread each pitta with passata and sprinkle with oregano.",
+      "Top with mozzarella, chorizo slices and cherry tomatoes.",
+      "Air fry at 190°C for 5–6 minutes, 2 at a time, until the cheese is bubbling and the chorizo sizzles at the edges. The chorizo is thinly sliced so it heats through fully – serve piping hot (75°C).",
+      "Cut into strips for sharing."
+    ] },
+  { id: "snack2-smoked-salmon-rosti-bites", name: "Smoked Salmon Rösti Bites", emoji: "🐟", cat: "snacks", temp: 200, time: 14, prep: 15, serves: 6, turn: "flip",
+    tags: ["christmas", "gluten-free", "light"],
+    ing: [["400g", "potatoes", "peeled and coarsely grated"], ["1", "eggs", "beaten"], ["½ tsp", "salt"], ["spray", "oil"], ["100g", "smoked salmon", "cut into strips"], ["4 tbsp", "cream cheese"], ["1", "lemon", "zest and a squeeze"], ["1 tsp", "?black pepper"]],
+    steps: [
+      "Squeeze as much liquid as you can out of the grated potato in a clean tea towel. Mix with the egg and salt.",
+      "Shape into 18 small flat rösti (about 5cm). Spray with oil and air fry on pierced baking paper at 200°C for 12–14 minutes until golden and crisp, flipping halfway. Cook in batches.",
+      "Smoked salmon is ready to eat, so it isn't cooked – keep it chilled until serving and add it to the rösti just before guests arrive (cooked fish would need 63°C).",
+      "Mix the cream cheese with lemon zest and juice. Top each cooled rösti with a dollop, a curl of salmon and black pepper."
     ] }
 );
