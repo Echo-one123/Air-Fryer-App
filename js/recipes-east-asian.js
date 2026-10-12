@@ -3,7 +3,7 @@
 RECIPES.push(
   // ───────────── CHINESE ─────────────
   { id: "asia-sticky-chinese-spare-ribs", name: "Sticky Chinese Spare Ribs", emoji: "🍖", cat: "pork", temp: 180, time: 30, prep: 10, serves: 4, turn: "flip",
-    tags: ["chinese", "fakeaway", "family", "trending"],
+    tags: ["crispy & sticky", "chinese", "fakeaway", "family", "trending"],
     ing: [["1kg", "pork ribs", "cut into single ribs"], ["4 tbsp", "hoisin sauce"], ["2 tbsp", "soy sauce"], ["2 tbsp", "honey"], ["1 tsp", "five spice"], ["2 cloves", "garlic", "crushed"], ["1 tsp", "ginger", "grated"], ["1 tbsp", "?sesame seeds"], ["2", "?spring onions", "sliced"]],
     steps: [
       "Mix the hoisin, soy, honey, five spice, garlic and ginger. Keep a third back for glazing and toss the ribs in the rest (marinate overnight if you can).",
@@ -12,7 +12,7 @@ RECIPES.push(
       "Check the meat by the bone has reached at least 71°C, then scatter with sesame seeds and spring onions."
     ] },
   { id: "asia-salt-pepper-ribs", name: "Salt & Pepper Ribs", emoji: "🧂", cat: "pork", temp: 180, time: 28, prep: 15, serves: 4, turn: "shake",
-    tags: ["chinese", "fakeaway", "family"],
+    tags: ["crispy & sticky", "chinese", "fakeaway", "family"],
     ing: [["1kg", "pork ribs", "cut into single ribs"], ["2 tbsp", "cornflour"], ["1 tbsp", "soy sauce"], ["1 tsp", "salt"], ["1 tsp", "black pepper", "coarsely ground"], ["½ tsp", "five spice"], ["1 tsp", "sugar"], ["1", "onion", "sliced"], ["1", "bell peppers", "green, sliced"], ["1", "red chilli", "sliced"], ["3 cloves", "garlic", "sliced"], ["spray", "oil"]],
     steps: [
       "Toss the ribs with soy sauce, then the cornflour. Mix the salt, pepper, five spice and sugar in a small bowl.",
@@ -21,7 +21,7 @@ RECIPES.push(
       "Toss everything with the salt and pepper mix while hot and serve straight away."
     ] },
   { id: "asia-chicken-balls-sweet-sour", name: "Chinese Chicken Balls with Sweet & Sour Sauce", emoji: "🟠", cat: "chicken", temp: 190, time: 14, prep: 20, serves: 4, turn: "shake",
-    tags: ["chinese", "fakeaway", "kids", "family"],
+    tags: ["crispy & sticky", "chinese", "fakeaway", "kids", "family"],
     ing: [["3", "chicken breast", "cut into 3cm chunks"], ["150g", "self-raising flour"], ["1 tbsp", "cornflour"], ["½ tsp", "baking powder"], ["200ml", "water", "sparkling if you have it"], ["½ tsp", "salt"], ["3 tbsp", "tomato ketchup"], ["2 tbsp", "rice vinegar"], ["2 tbsp", "sugar"], ["1 tbsp", "soy sauce"], ["100ml", "?pineapple", "juice from a tin"], ["spray", "oil"]],
     steps: [
       "Whisk the flour, cornflour, baking powder, salt and cold water to a thick batter. Dip the chicken chunks and let the excess drip off.",
@@ -57,7 +57,7 @@ RECIPES.push(
       "Rest the duck for 5 minutes, slice and serve on the pak choi with sesame seeds."
     ] },
   { id: "asia-black-bean-beef", name: "Black Bean Beef", emoji: "🥩", cat: "beef", temp: 200, time: 10, prep: 15, serves: 3, turn: "shake",
-    tags: ["chinese", "fakeaway", "high-protein", "quick"],
+    tags: ["crispy & sticky", "chinese", "fakeaway", "high-protein", "quick"],
     ing: [["400g", "beef steak", "rump, thinly sliced"], ["1 tbsp", "cornflour"], ["1 tbsp", "soy sauce"], ["1", "onion", "cut into chunks"], ["1", "bell peppers", "green, chunks"], ["4 tbsp", "black bean sauce"], ["1 tsp", "ginger", "grated"], ["2 cloves", "garlic", "crushed"], ["spray", "oil"], ["to serve", "?rice"]],
     steps: [
       "Toss the beef with the soy and cornflour.",

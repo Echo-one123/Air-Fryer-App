@@ -30,7 +30,7 @@ RECIPES.push(
       "Serve with sliced red onion, lemon wedges and a minty yoghurt dip."
     ] },
   { id: "sweet-sour-chicken", name: "Sweet & Sour Chicken", emoji: "🍍", cat: "chicken", temp: 200, time: 14, prep: 15, serves: 3, turn: "shake",
-    tags: ["fakeaway", "chinese", "family"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "family"],
     ing: [["500g", "chicken breast", "bite-size pieces"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["1", "bell peppers", "chunks"], ["1", "onion", "chunks"], ["200g", "pineapple", "chunks, tinned is fine"], ["4 tbsp", "tomato ketchup"], ["3 tbsp", "rice vinegar"], ["2 tbsp", "brown sugar"], ["1 tbsp", "soy sauce"], ["100ml", "water", "or pineapple juice"], ["spray", "oil"], ["to serve", "?rice"]],
     steps: [
       "Dip the chicken in egg, then toss in 50g cornflour with a pinch of salt. Spray well with oil.",
@@ -39,7 +39,7 @@ RECIPES.push(
       "Toss the crispy chicken through the sauce just before serving so it stays crunchy. Serve with rice."
     ] },
   { id: "orange-chicken", name: "Orange Chicken", emoji: "🍊", cat: "chicken", temp: 200, time: 14, prep: 15, serves: 3, turn: "shake",
-    tags: ["fakeaway", "trending", "chinese", "sticky"],
+    tags: ["crispy & sticky", "fakeaway", "trending", "chinese", "sticky"],
     ing: [["500g", "chicken thighs", "bite-size pieces"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["2", "oranges", "zest and juice"], ["3 tbsp", "honey"], ["2 tbsp", "soy sauce"], ["1 tbsp", "rice vinegar"], ["2 cloves", "garlic", "crushed"], ["1 tsp", "ginger", "grated"], ["½ tsp", "chilli flakes"], ["2", "spring onions", "sliced"], ["1 tsp", "sesame seeds"], ["spray", "oil"]],
     steps: [
       "Dip the chicken in egg, then toss in 50g cornflour with a pinch of salt. Spray with oil.",
@@ -48,7 +48,7 @@ RECIPES.push(
       "Toss the chicken in the glossy sauce and finish with spring onions and sesame seeds."
     ] },
   { id: "general-tsos-chicken", name: "General Tso's Chicken", emoji: "🌶️", cat: "chicken", temp: 200, time: 14, prep: 15, serves: 3, turn: "shake",
-    tags: ["fakeaway", "chinese", "spicy", "sticky"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "spicy", "sticky"],
     ing: [["500g", "chicken thighs", "bite-size pieces"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["3 tbsp", "soy sauce"], ["2 tbsp", "hoisin sauce"], ["2 tbsp", "brown sugar"], ["2 tbsp", "rice vinegar"], ["1 tsp", "sesame oil"], ["3 cloves", "garlic", "crushed"], ["1 tsp", "ginger", "grated"], ["1 tsp", "chilli flakes", "or 4 dried chillies"], ["3", "spring onions", "sliced"], ["spray", "oil"], ["to serve", "?rice"]],
     steps: [
       "Coat the chicken in egg, then 50g cornflour and a pinch of salt. Spray with oil.",
@@ -57,7 +57,7 @@ RECIPES.push(
       "Toss the chicken in the sauce, scatter with spring onions and serve with rice."
     ] },
   { id: "chinese-lemon-chicken", name: "Chinese Lemon Chicken", emoji: "🍋", cat: "chicken", temp: 200, time: 14, prep: 10, serves: 2, turn: "flip",
-    tags: ["fakeaway", "chinese", "classic"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "classic"],
     ing: [["2", "chicken breast", "butterflied and halved"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["2", "lemon", "zest and juice"], ["3 tbsp", "sugar"], ["150ml", "water"], ["1 tbsp", "?honey"], ["spray", "oil"], ["1", "?spring onions", "sliced"]],
     steps: [
       "Dip the chicken pieces in egg, then press into 50g cornflour with a pinch of salt. Spray both sides with oil.",
@@ -66,7 +66,7 @@ RECIPES.push(
       "Slice the chicken into strips, pour over the lemon sauce and scatter with spring onion."
     ] },
   { id: "crispy-shredded-chicken", name: "Crispy Shredded Chicken", emoji: "🥢", cat: "chicken", temp: 200, time: 12, prep: 15, serves: 2, turn: "shake",
-    tags: ["fakeaway", "chinese", "sweet chilli"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "sweet chilli"],
     ing: [["2", "chicken breast", "cut into thin strips"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["1", "carrots", "matchsticks"], ["1", "bell peppers", "thin strips"], ["3", "spring onions", "sliced"], ["4 tbsp", "sweet chilli sauce"], ["2 tbsp", "soy sauce"], ["1 tbsp", "rice vinegar"], ["1 tbsp", "honey"], ["2 cloves", "garlic", "crushed"], ["spray", "oil"]],
     steps: [
       "Toss the thin chicken strips in egg, then cornflour with a pinch of salt. Spread out in the basket and spray well with oil.",
@@ -75,7 +75,7 @@ RECIPES.push(
       "Toss the chicken through quickly, top with spring onions and serve straight away."
     ] },
   { id: "salt-chilli-chicken", name: "Salt & Chilli Chicken", emoji: "🧂", cat: "chicken", temp: 200, time: 14, prep: 10, serves: 2, turn: "shake",
-    tags: ["fakeaway", "chinese", "spicy", "gluten-free"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "spicy", "gluten-free"],
     ing: [["500g", "chicken thighs", "bite-size pieces"], ["1", "eggs", "beaten"], ["50g", "cornflour"], ["1 tsp", "five spice"], ["1 tsp", "salt"], ["1", "onion", "sliced"], ["1", "bell peppers", "sliced"], ["1", "red chilli", "sliced"], ["3", "spring onions", "sliced"], ["3 cloves", "garlic", "sliced"], ["½ tsp", "chilli flakes"], ["spray", "oil"]],
     steps: [
       "Toss the chicken in egg, then cornflour mixed with half the five spice and salt. Spray with oil.",
@@ -226,7 +226,7 @@ RECIPES.push(
       "Rest the pork for 2 minutes, slice into strips and serve with shredded cabbage, rice and the sauce."
     ] },
   { id: "sweet-sour-pork", name: "Sweet & Sour Pork", emoji: "🍍", cat: "pork", temp: 200, time: 14, prep: 15, serves: 3, turn: "shake",
-    tags: ["fakeaway", "chinese", "family"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "family"],
     ing: [["500g", "pork fillet", "bite-size chunks"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["1", "bell peppers", "chunks"], ["1", "onion", "chunks"], ["200g", "pineapple", "chunks"], ["4 tbsp", "tomato ketchup"], ["3 tbsp", "rice vinegar"], ["2 tbsp", "brown sugar"], ["1 tbsp", "soy sauce"], ["100ml", "water"], ["spray", "oil"], ["to serve", "?rice"]],
     steps: [
       "Coat the pork in egg, then 50g cornflour with a pinch of salt. Spray well with oil.",
@@ -246,7 +246,7 @@ RECIPES.push(
 
   // ───────────── FISH ─────────────
   { id: "salt-pepper-squid", name: "Salt & Pepper Squid", emoji: "🦑", cat: "fish", temp: 200, time: 8, prep: 10, serves: 2, turn: "shake",
-    tags: ["fakeaway", "chinese", "starter", "quick"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "starter", "quick"],
     ing: [["400g", "squid", "rings or scored tubes, patted dry"], ["1", "eggs", "beaten"], ["60g", "cornflour"], ["1 tsp", "salt"], ["1 tsp", "black pepper", "coarsely ground"], ["½ tsp", "five spice"], ["1", "red chilli", "sliced"], ["2", "spring onions", "sliced"], ["1", "lemon", "wedges"], ["spray", "oil"]],
     steps: [
       "Dip the squid in egg, then toss in the cornflour mixed with the salt, pepper and five spice. Spray well with oil.",

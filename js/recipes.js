@@ -7,6 +7,7 @@
  * turn: what to do at halfway – 'shake' (default), 'flip', or 'none' (leave it alone).
  */
 const CATEGORIES = [
+  { id: 'sticky', label: 'Crispy & Sticky', emoji: '🥢' },
   { id: 'chicken', label: 'Chicken', emoji: '🍗' },
   { id: 'beef', label: 'Beef', emoji: '🥩' },
   { id: 'pork', label: 'Pork', emoji: '🥓' },
@@ -27,6 +28,16 @@ const CATEGORIES = [
 
 // Shown above the results when a category chip is selected.
 const CATEGORY_TIPS = {
+  sticky: {
+    title: '🥢 How to get them crispy and sticky',
+    tips: [
+      'Slice meat thin (5mm) and against the grain – popping it in the freezer for 20 minutes first makes this easy.',
+      'Toss in a splash of soy or egg white, then cornflour until every piece is dry-coated. Shake off the excess.',
+      'Spray well with oil and cook in a single layer – crowded strips steam instead of crisping. Shake twice.',
+      'Warm the sauce in a pan until glossy, toss the crispy pieces through, then return to the air fryer for 2 minutes to go sticky.',
+      'Eat straight away while crunchy. Chicken and mince to 75°C, pork 71°C, prawns and fish 63°C.'
+    ]
+  },
   dumpgo: {
     title: '🫕 Dump & Go: bung it in and press start',
     tips: [
@@ -200,7 +211,7 @@ const RECIPES = [
   {
     id: 'crispy-chilli-beef', name: 'Crispy Chilli Beef', emoji: '🌶️', cat: 'beef',
     temp: 200, time: 12, prep: 15, serves: 2, turn: 'shake',
-    tags: ['fakeaway', 'chinese', 'spicy', 'sticky'],
+    tags: ['crispy & sticky', 'fakeaway', 'chinese', 'spicy', 'sticky'],
     ing: [['300g', 'beef steak', 'very thinly sliced into strips'], ['3 tbsp', 'cornflour'], ['1 tbsp', 'soy sauce'], ['4 tbsp', 'sweet chilli sauce'], ['1 tbsp', '?rice vinegar'], ['1', 'bell peppers', 'thinly sliced'], ['2', 'spring onions', 'sliced'], ['1', '?red chilli', 'sliced'], ['2 cloves', 'garlic', 'crushed'], ['spray', 'oil']],
     steps: [
       'Toss the beef in the soy sauce, then in the cornflour until every strip is dry-coated. Spray with oil.',
@@ -228,7 +239,7 @@ const RECIPES = [
   {
     id: 'pork-belly-bites', name: 'Crispy Pork Belly Bites', emoji: '🥓', cat: 'pork',
     temp: 200, time: 25, prep: 10, serves: 4, turn: 'shake',
-    tags: ['crispy', 'fakeaway', 'weekend', 'sticky'],
+    tags: ['crispy & sticky', 'crispy', 'fakeaway', 'weekend', 'sticky'],
     ing: [['600g', 'pork belly', 'skin removed, cut into 3cm cubes'], ['1 tsp', 'five spice'], ['1 tsp', 'salt'], ['1 tbsp', 'soy sauce'], ['1 tbsp', '?honey']],
     steps: [
       'Pat the pork dry, then toss with the soy sauce, five spice and salt.',
@@ -427,7 +438,7 @@ const RECIPES = [
   {
     id: 'sesame-tofu', name: 'Crispy Sweet Chilli Tofu', emoji: '🥢', cat: 'veggie',
     temp: 200, time: 15, prep: 20, serves: 2, turn: 'shake',
-    tags: ['vegan', 'asian', 'high-protein', 'fakeaway'],
+    tags: ['crispy & sticky', 'vegan', 'asian', 'high-protein', 'fakeaway'],
     ing: [['400g block', 'tofu', 'extra firm'], ['1 tbsp', 'soy sauce'], ['1 tbsp', 'cornflour'], ['1 tsp', 'sesame oil'], ['3 tbsp', 'sweet chilli sauce'], ['1 tsp', 'sesame seeds'], ['2', '?spring onions', 'sliced']],
     steps: [
       'Press the tofu for 15 minutes (wrap in a tea towel with something heavy on top), then cut into 2cm cubes.',

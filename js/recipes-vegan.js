@@ -7,12 +7,12 @@ RECIPES.push(
     steps: ["Press the tofu for 15 minutes, pat dry and tear or cut into nugget-sized pieces.", "Toss in cornflour, dip in the plant milk, then coat in breadcrumbs mixed with the garlic granules, paprika and salt.", "Spray well with oil and lay in the basket in a single layer, don't overcrowd.", "Cook at 200°C for 14–16 minutes, shaking halfway, until golden and crisp. Serve with ketchup."] },
 
   { id: "vegan-salt-pepper-tofu", name: "Salt & Pepper Tofu", emoji: "🌶️", cat: "veggie", temp: 200, time: 15, prep: 15, serves: 2, turn: "shake",
-    tags: ["vegan", "vegetarian", "fakeaway", "chinese", "high-protein"],
+    tags: ["crispy & sticky", "vegan", "vegetarian", "fakeaway", "chinese", "high-protein"],
     ing: [["400g", "tofu", "extra-firm, pressed and cubed"], ["3 tbsp", "cornflour"], ["1 tsp", "five spice"], ["1 tsp", "salt"], ["1 tsp", "black pepper"], ["1", "onion", "sliced"], ["1", "bell peppers", "sliced"], ["1", "red chilli", "sliced"], ["2", "spring onions", "sliced"], ["2 cloves", "garlic", "sliced"], ["1 tbsp", "oil"]],
     steps: ["Toss the tofu cubes in cornflour, five spice, salt and pepper. Spray with oil.", "Air fry at 200°C for 15 minutes in a single layer, shaking halfway, until crisp.", "Meanwhile stir-fry the onion, pepper, chilli and garlic in the oil on the hob for 3–4 minutes.", "Toss the crispy tofu through the veg and finish with spring onions."] },
 
   { id: "vegan-general-tsos-tofu", name: "General Tso's Tofu", emoji: "🥢", cat: "veggie", temp: 200, time: 16, prep: 15, serves: 2, turn: "shake",
-    tags: ["vegan", "vegetarian", "fakeaway", "chinese", "trending"],
+    tags: ["crispy & sticky", "vegan", "vegetarian", "fakeaway", "chinese", "trending"],
     ing: [["400g", "tofu", "extra-firm, pressed and cubed"], ["4 tbsp", "cornflour"], ["3 tbsp", "soy sauce"], ["2 tbsp", "maple syrup"], ["1 tbsp", "rice vinegar"], ["1 tbsp", "hoisin sauce"], ["1 tsp", "chilli flakes"], ["2 cloves", "garlic", "crushed"], ["1 tsp", "ginger", "grated"], ["1 tsp", "?sesame seeds"], ["200g", "rice", "to serve"], ["spray", "oil"]],
     steps: ["Toss the tofu in 3 tbsp cornflour and a pinch of salt. Spray with oil.", "Air fry at 200°C for 16 minutes in a single layer, shaking halfway.", "Simmer the soy, maple syrup, vinegar, hoisin, chilli, garlic and ginger in a pan for 2 minutes. Thicken with 1 tbsp cornflour mixed with 3 tbsp water.", "Toss the crispy tofu in the sauce, scatter with sesame seeds and serve over rice."] },
 

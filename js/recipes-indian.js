@@ -265,7 +265,7 @@ RECIPES.push(
       "Serve with yoghurt and mango chutney drizzled over (chaat-style)."
     ] },
   { id: "indian-chilli-paneer", name: "Chilli Paneer Bites", emoji: "🌶️", cat: "snacks", temp: 200, time: 12, prep: 10, serves: 4, turn: "shake",
-    tags: ["indian", "vegetarian", "fakeaway", "spicy"],
+    tags: ["crispy & sticky", "indian", "vegetarian", "fakeaway", "spicy"],
     ing: [["450g", "paneer", "in cubes"], ["2 tbsp", "cornflour"], ["½ tsp", "chilli powder"], ["1", "bell peppers", "in chunks"], ["1", "onion", "in petals"], ["2 cloves", "garlic", "crushed"], ["1 tbsp", "ginger", "grated"], ["2 tbsp", "soy sauce"], ["2 tbsp", "sweet chilli sauce"], ["1 tbsp", "tomato ketchup"], ["1 tsp", "rice vinegar"], ["2", "spring onions", "sliced"], ["spray", "oil"]],
     steps: [
       "Toss the paneer in the cornflour and chilli powder, then spray well with oil.",

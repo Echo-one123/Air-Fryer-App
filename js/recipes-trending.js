@@ -24,7 +24,7 @@ RECIPES.push(
   {
     id: "hot-honey-chicken-bites", name: "Hot Honey Chicken Bites", emoji: "🍯", cat: "chicken",
     temp: 200, time: 14, prep: 10, serves: 2, turn: "shake",
-    tags: ["trending", "spicy", "sticky", "game day"],
+    tags: ["crispy & sticky", "trending", "spicy", "sticky", "game day"],
     ing: [["2", "chicken breast", "cut into 3cm chunks"], ["3 tbsp", "cornflour"], ["1 tsp", "paprika"], ["1 tsp", "garlic granules"], ["½ tsp", "salt"], ["spray", "oil"], ["3 tbsp", "honey"], ["1 tbsp", "hot sauce"], ["½ tsp", "chilli flakes"]],
     steps: [
       "Toss the chicken with the cornflour, paprika, garlic granules and salt until well coated. Spray generously with oil.",
@@ -36,7 +36,7 @@ RECIPES.push(
   {
     id: "korean-fried-chicken", name: "Korean Fried Chicken", emoji: "🇰🇷", cat: "chicken",
     temp: 200, time: 22, prep: 10, serves: 2, turn: "shake",
-    tags: ["trending", "spicy", "sticky", "fakeaway"],
+    tags: ["crispy & sticky", "trending", "spicy", "sticky", "fakeaway"],
     ing: [["600g", "chicken wings", "or boneless thigh pieces"], ["3 tbsp", "cornflour"], ["½ tsp", "salt"], ["2 tbsp", "gochujang"], ["2 tbsp", "honey"], ["1 tbsp", "soy sauce"], ["1 tsp", "rice vinegar"], ["1 clove", "garlic", "crushed"], ["1 tsp", "sesame oil"], ["1 tsp", "?sesame seeds"], ["2", "?spring onions", "sliced"]],
     steps: [
       "Pat the chicken very dry, then toss in the cornflour and salt. Spray with oil.",
@@ -48,7 +48,7 @@ RECIPES.push(
   {
     id: "bang-bang-chicken", name: "Bang Bang Chicken", emoji: "💥", cat: "chicken",
     temp: 200, time: 14, prep: 10, serves: 2, turn: "shake",
-    tags: ["trending", "fakeaway", "spicy"],
+    tags: ["crispy & sticky", "trending", "fakeaway", "spicy"],
     ing: [["2", "chicken breast", "cut into bite-size pieces"], ["1", "eggs", "beaten"], ["40g", "cornflour"], ["50g", "breadcrumbs", "panko if you have it"], ["½ tsp", "salt"], ["spray", "oil"], ["3 tbsp", "mayonnaise"], ["2 tbsp", "sweet chilli sauce"], ["1 tsp", "sriracha"], ["2", "?spring onions", "sliced"]],
     steps: [
       "Season the cornflour with salt. Coat the chicken in cornflour, then egg, then breadcrumbs. Spray with oil.",
@@ -112,7 +112,7 @@ RECIPES.push(
   {
     id: "bang-bang-prawns", name: "Bang Bang Prawns", emoji: "🦐", cat: "fish",
     temp: 200, time: 8, prep: 10, serves: 2, turn: "shake",
-    tags: ["trending", "fakeaway", "quick"],
+    tags: ["crispy & sticky", "trending", "fakeaway", "quick"],
     ing: [["250g", "prawns", "raw king prawns, peeled"], ["30g", "cornflour"], ["1", "eggs", "beaten"], ["50g", "breadcrumbs", "panko if you have it"], ["¼ tsp", "salt"], ["spray", "oil"], ["3 tbsp", "mayonnaise"], ["2 tbsp", "sweet chilli sauce"], ["1 tsp", "sriracha"], ["1", "?lime"]],
     steps: [
       "Pat the prawns dry. Coat in salted cornflour, then egg, then breadcrumbs. Spray with oil.",

@@ -109,7 +109,7 @@ RECIPES.push(
   {
     id: "honey-chilli-wings", name: "Honey Chilli Chicken Wings", emoji: "🔥", cat: "chicken",
     temp: 200, time: 26, prep: 5, serves: 2, turn: "shake",
-    tags: ["honey roast", "spicy", "party", "game day"],
+    tags: ["crispy & sticky", "honey roast", "spicy", "party", "game day"],
     ing: [["800g", "chicken wings"], ["1 tbsp", "cornflour"], ["1 tsp", "salt"], ["3 tbsp", "honey"], ["1 tsp", "chilli flakes"], ["1 tbsp", "soy sauce"], ["1", "?red chilli", "sliced"]],
     steps: [
       "Pat the wings dry and toss with cornflour and salt.",
@@ -253,7 +253,7 @@ RECIPES.push(
   {
     id: "honey-sesame-cauliflower", name: "Honey Sesame Cauliflower", emoji: "🥦", cat: "veggie",
     temp: 200, time: 18, prep: 10, serves: 3, turn: "shake",
-    tags: ["honey roast", "trending", "fakeaway", "vegetarian"],
+    tags: ["crispy & sticky", "honey roast", "trending", "fakeaway", "vegetarian"],
     ing: [["1", "cauliflower", "florets"], ["2 tbsp", "cornflour"], ["1 tbsp", "oil"], ["½ tsp", "salt"], ["3 tbsp", "honey"], ["2 tbsp", "soy sauce"], ["1 clove", "garlic", "crushed"], ["1 tbsp", "sesame seeds"], ["2", "?spring onions", "sliced"]],
     steps: [
       "Toss the florets with oil, then cornflour and salt.",

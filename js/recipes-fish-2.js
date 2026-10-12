@@ -243,7 +243,7 @@ RECIPES.push(
       "Serve straight away with sweet chilli sauce for dipping."
     ] },
   { id: "fish2-salt-pepper-prawns", name: "Salt & Pepper Prawns", emoji: "🌶️", cat: "fish", temp: 200, time: 7, prep: 10, serves: 2, turn: "shake",
-    tags: ["fakeaway", "chinese", "quick", "high-protein"],
+    tags: ["crispy & sticky", "fakeaway", "chinese", "quick", "high-protein"],
     ing: [["250g", "prawns", "raw king prawns, peeled"], ["2 tbsp", "cornflour"], ["½ tsp", "salt"], ["1 tsp", "black pepper"], ["½ tsp", "five spice"], ["1", "red chilli", "sliced"], ["2", "spring onions", "sliced"], ["1 clove", "garlic", "sliced"], ["spray", "oil"]],
     steps: [
       "Pat the prawns dry. Mix the cornflour, salt, pepper and five spice and toss the prawns to coat.",
