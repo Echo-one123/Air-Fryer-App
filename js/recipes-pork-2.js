@@ -74,7 +74,7 @@ RECIPES.push(
       "Check the pieces have reached at least 71°C (belly is best taken well beyond) and rest for 3 minutes – the glaze is very hot."
     ] },
   { id: "pork2-salt-pepper-belly", name: "Salt & Pepper Pork Belly", emoji: "🧂", cat: "pork", temp: 200, time: 25, prep: 10, serves: 3, turn: "shake",
-    tags: ["fakeaway", "low-carb", "gluten-free"],
+    tags: ["crispy & sticky", "fakeaway", "low-carb", "gluten-free"],
     ing: [["500g", "pork belly", "pork belly slices, cut into strips"], ["1 tsp", "salt", "flaky"], ["1 tsp", "black pepper", "coarsely ground"], ["½ tsp", "chilli flakes"], ["2", "spring onions", "sliced"], ["1", "red chilli", "sliced"], ["1 tbsp", "cornflour"]],
     steps: [
       "Pat the strips dry and toss in cornflour, salt and pepper.",
@@ -190,7 +190,7 @@ RECIPES.push(
       "Make sure the ham is piping hot (75°C) all the way through, then serve warm."
     ] },
   { id: "pork2-crispy-chop-bites", name: "Crispy Pork Chop Bites", emoji: "🍿", cat: "pork", temp: 200, time: 10, prep: 15, serves: 4, turn: "shake",
-    tags: ["kids", "snacks", "family", "quick"],
+    tags: ["crispy & sticky", "kids", "snacks", "family", "quick"],
     ing: [["4", "pork chops", "boneless, cut into 2.5cm chunks"], ["40g", "plain flour"], ["1", "eggs", "beaten"], ["70g", "breadcrumbs"], ["1 tsp", "paprika"], ["½ tsp", "garlic granules"], ["½ tsp", "salt"], ["spray", "oil"], ["", "?bbq sauce", "for dipping"]],
     steps: [
       "Season the flour with paprika, garlic granules and salt. Coat the pork chunks in flour, then egg, then breadcrumbs.",

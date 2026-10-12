@@ -173,7 +173,7 @@ RECIPES.push(
       "Brush with melted butter and serve warm with mustard or a cheese dip."
     ] },
   { id: "snack2-sriracha-cocktail-sausages", name: "Sticky Sriracha Cocktail Sausages", emoji: "🌭", cat: "snacks", temp: 190, time: 14, prep: 3, serves: 6, turn: "shake",
-    tags: ["family", "christmas", "quick"],
+    tags: ["crispy & sticky", "family", "christmas", "quick"],
     ing: [["400g", "cocktail sausages"], ["2 tbsp", "honey"], ["1 tbsp", "sriracha"], ["1 tbsp", "soy sauce"], ["1 tsp", "?sesame seeds"]],
     steps: [
       "Air fry the sausages at 190°C for 10 minutes, shaking halfway.",

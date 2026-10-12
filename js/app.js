@@ -132,6 +132,7 @@ const FILTERS = [
 const filterOf = id => FILTERS.find(f => f.id === id) || FILTERS[0];
 // Categories that also collect matching recipes from other categories.
 const CAT_EXTRA = {
+  sticky: r => r.tags.includes('crispy & sticky'),
   wraps: r => r.tags.includes('wraps'),
   pasta: r => r.ing.some(i => /^\??(pasta|gnocchi)$/.test(i[1]))
 };

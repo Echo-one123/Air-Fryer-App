@@ -42,7 +42,7 @@ RECIPES.push(
   {
     id: "indo-chinese-chilli-chicken", name: "Chilli Chicken (Indo-Chinese)", emoji: "🌶️", cat: "chicken",
     temp: 200, time: 14, prep: 15, serves: 3, turn: "shake",
-    tags: ["indo-chinese", "fakeaway", "spicy"],
+    tags: ["crispy & sticky", "indo-chinese", "fakeaway", "spicy"],
     ing: [["500g", "chicken thighs", "boneless, chunks"], ["1", "eggs", "beaten"], ["3 tbsp", "cornflour"], ["spray", "oil"], ["1", "bell peppers", "green, chunks"], ["1", "onion", "chunks"], ["2", "red chilli", "slit"], ["2 cloves", "garlic", "chopped"], ["2 tbsp", "soy sauce"], ["2 tbsp", "tomato ketchup"], ["1 tbsp", "sriracha"], ["1 tsp", "rice vinegar"], ["2", "?spring onions", "sliced"]],
     steps: [
       "Toss the chicken in the egg, then in the cornflour. Spray with oil.",
@@ -56,7 +56,7 @@ RECIPES.push(
   {
     id: "malaysian-honey-chicken", name: "Malaysian Honey Chicken", emoji: "🍯", cat: "chicken",
     temp: 200, time: 14, prep: 10, serves: 3, turn: "shake",
-    tags: ["fakeaway", "sticky", "family"],
+    tags: ["crispy & sticky", "fakeaway", "sticky", "family"],
     ing: [["500g", "chicken thighs", "boneless, chunks"], ["1", "eggs", "beaten"], ["4 tbsp", "cornflour"], ["spray", "oil"], ["3 tbsp", "honey"], ["2 tbsp", "soy sauce"], ["1 tbsp", "tomato ketchup"], ["1 tsp", "rice vinegar"], ["2 cloves", "garlic", "crushed"], ["1 tsp", "?sesame seeds"]],
     steps: [
       "Dip the chicken in the egg, then toss in the cornflour. Spray with oil.",
@@ -116,7 +116,7 @@ RECIPES.push(
   {
     id: "kung-pao-chicken", name: "Kung Pao Chicken", emoji: "🥜", cat: "chicken",
     temp: 200, time: 12, prep: 10, serves: 3, turn: "shake",
-    tags: ["chinese", "fakeaway", "spicy", "quick"],
+    tags: ["crispy & sticky", "chinese", "fakeaway", "spicy", "quick"],
     ing: [["500g", "chicken thighs", "boneless, small chunks"], ["2 tbsp", "cornflour"], ["spray", "oil"], ["1", "bell peppers", "chunks"], ["3 tbsp", "soy sauce"], ["1 tbsp", "rice vinegar"], ["1 tbsp", "brown sugar"], ["1 tsp", "chilli flakes"], ["2 cloves", "garlic", "sliced"], ["1 thumb", "ginger", "sliced"], ["50g", "mixed nuts", "unsalted peanuts ideally"], ["3", "spring onions", "chopped"]],
     steps: [
       "Toss the chicken in 1 tbsp soy and the cornflour. Spray with oil and add the pepper to the basket.",
@@ -128,7 +128,7 @@ RECIPES.push(
   {
     id: "sesame-chicken", name: "Sesame Chicken", emoji: "🥢", cat: "chicken",
     temp: 200, time: 14, prep: 10, serves: 3, turn: "shake",
-    tags: ["chinese", "fakeaway", "sticky", "family"],
+    tags: ["crispy & sticky", "chinese", "fakeaway", "sticky", "family"],
     ing: [["500g", "chicken breast", "chunks"], ["1", "eggs", "beaten"], ["4 tbsp", "cornflour"], ["spray", "oil"], ["3 tbsp", "soy sauce"], ["2 tbsp", "honey"], ["1 tbsp", "hoisin sauce"], ["1 tsp", "sesame oil"], ["1 clove", "garlic", "crushed"], ["2 tbsp", "sesame seeds", "toasted"]],
     steps: [
       "Dip the chicken in the egg, toss in the cornflour and spray with oil.",

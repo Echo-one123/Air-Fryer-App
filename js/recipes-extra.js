@@ -281,7 +281,7 @@ RECIPES.push(
   {
     id: "teriyaki-beef-skewers", name: "Teriyaki Beef Skewers", emoji: "🍢", cat: "beef",
     temp: 200, time: 8, prep: 20, serves: 4, turn: "flip",
-    tags: ["asian", "bbq", "sticky"],
+    tags: ["crispy & sticky", "asian", "bbq", "sticky"],
     ing: [["500g", "beef steak", "rump, 3cm cubes"], ["4 tbsp", "teriyaki sauce"], ["1 clove", "garlic", "crushed"], ["1 tsp", "?ginger", "grated"], ["1", "?bell peppers", "chunks"], ["1 tsp", "?sesame seeds"], ["2", "?spring onions"]],
     steps: [
       "Marinate the beef in 3 tbsp teriyaki, garlic and ginger for 20 minutes.",
